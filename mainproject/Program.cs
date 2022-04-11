@@ -10,7 +10,6 @@ namespace mainproject
     {
         static void Main(string[] args)
         {
-            Console.Write("It's a beggining of wonderful story."); 
-        }
+            Console.Write("It's a beggining of wonderful story.");        }
     }
 }
