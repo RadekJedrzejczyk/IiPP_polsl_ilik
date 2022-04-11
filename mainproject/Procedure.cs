@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
-    class procedury
+    class Procedure
     {
-        string dzialanie;
+        string action;
     }
 }
