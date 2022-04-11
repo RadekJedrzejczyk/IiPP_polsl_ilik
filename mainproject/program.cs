@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
-    class program
+    class Program
     {
         static void Main(string[] args)
         {
+            Console.Write("It's a beggining of wonderful story."); 
         }
     }
 }

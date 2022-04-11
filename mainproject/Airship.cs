@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
-    class samolot
+    class Airship
     {
-        string typ;
-        string wymagane_uprawnienia;
+        string type;
+        string required_legitimation;
     }
 }

@@ -44,12 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="czynnosci.cs" />
-    <Compile Include="pilot.cs" />
-    <Compile Include="procedury.cs" />
-    <Compile Include="program.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="Pilot.cs" />
+    <Compile Include="Procedure.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="samolot.cs" />
+    <Compile Include="Airship.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

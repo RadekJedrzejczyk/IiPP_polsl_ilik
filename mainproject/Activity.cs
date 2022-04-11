@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
-    class czynnosci
+    class Activity
     {
-        string rodzaj;
+        string type;
 
     }
 }
