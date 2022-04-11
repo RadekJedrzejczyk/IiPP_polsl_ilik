@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
-    class pilot
+    class Pilot
     {
-        string imie;
-        string nazwisko;
-        int nr_licencji;
-        string rodzaj_uprawnien;
+        string name;
+        string surname;
+        int licention_number;
+        string legitimation_type;
     }
 }
