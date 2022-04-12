@@ -27,14 +27,14 @@ a nie "Słowo1Słowo2Słowo3".
 --------------------
 
        Podział ról: 
-1. Radosław Jędrzejczyk - Zarządzanie projektem oraz back-end'em
-2. Aleksander Jassak - Zarządzanie front-end'em
-3. Aleksandra Gruszka - Młodszy programista
-4. Gaweł Borowicz - Tester
-5. Bartek Witek - AFK
-6. Marcel Kłosowski - AFK
+1. Radosław Jędrzejczyk - Zarządzanie projektem oraz back-end'em.
+2. Aleksander Jassak - Zarządzanie front-end'em.
+3. Aleksandra Gruszka - Młodszy programista.
+4. Gaweł Borowicz - Tester.
+5. Bartek Witek - AFK.
+6. Marcel Kłosowski - AFK.
 
 --------------------
      
       Przydatne linki: 
- draw.io = oprogramowanie do tworzenia schematów
+ draw.io = oprogramowanie do tworzenia schematów.
