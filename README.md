@@ -9,7 +9,7 @@ a nie "Słowo1Słowo2Słowo3".
 3. Stosujemy nazwy angielskie (nawet jeśli mielibyśmy napisać je źle, ktoś poprawi).
 4. Zanim jakaś funkcjonalność przejdzie testy pracujemy nad nią na branch'u innym niż "Master".
 5. Każda klasa oraz funkcja musi zawierać komentarz na temat tego czym jest/co robi. 
-6. Jeżeli chcesz wprowadzić zmianę do zawartości repozytorium i masz wątpliwości czy możesz/masz problem pisz do: Radosław Jędrzejczyk.
+6. Jeżeli chcesz wprowadzić zmianę do zawartości repozytorium pisz do: Radosław Jędrzejczyk.
 7. Zadania staramy się wykonywać na czas lub informujemy czemu nie zdążymy.
 8. Do informowania o sprawach organizacyjnych służy grupa na messengerze. 
 
