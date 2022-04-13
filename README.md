@@ -32,7 +32,7 @@ a nie "Słowo1Słowo2Słowo3".
 3. Aleksandra Gruszka - Młodszy programista.
 4. Gaweł Borowicz - Tester.
 5. Bartek Witek - AFK.
-6. Marcel Kłosowski - AFK.
+6. Marcel Kłosowski - Młodszy programista.
 
 --------------------
      
