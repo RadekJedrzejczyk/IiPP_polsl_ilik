@@ -45,7 +45,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Activity.cs" />
+    <Compile Include="Default_database.cs" />
     <Compile Include="Pilot.cs" />
+    <Compile Include="Private_database.cs" />
     <Compile Include="Procedure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

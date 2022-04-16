@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mainproject
+namespace back_end
 {
     class Airship
-    {
-        string type;
-        string required_legitimation;
+    {/// <summary>
+    /// Klasa opisująca statek powietrzny
+    /// </summary>
+        private string type;
+        private string required_legitimation;
+        private List<Procedure>procedure_list=new List<Procedure>();
     }
 }
