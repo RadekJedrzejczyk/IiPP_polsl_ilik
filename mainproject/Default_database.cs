@@ -13,13 +13,58 @@ namespace back_end
         /// Domyślna baza danych, dostępna dla każdego, zawierająca oficjalne dane
         /// </summary>
         private List<Pilot> users_list = new List<Pilot>();
-        private List<Airship> airship_list = new List<Airship>();
-        private List<Procedure> procedure_list = new List<Procedure>();
-        private List<Activity> activity_list = new List<Activity>();
+        protected List<Airship> airship_list = new List<Airship>();
+        protected List<Procedure> procedure_blocks_list = new List<Procedure>();
+        protected List<Activity> activity_blocks_list = new List<Activity>();
 
-        public Default_database(string path)
+        public void add_to_list(Pilot pilot)
+        { 
+
+        }
+
+        public void add_to_list(Airship airship)
         {
-            ///wczytuje dane ze ścieżki i wpisuje
+
+        }
+
+        public void add_to_list(Procedure procedure)
+        {
+
+        }
+
+        public void add_to_list(Activity activity)
+        {
+
+        }
+
+        public void remove_to_list(Pilot pilot)
+        { 
+
+        }
+
+        public void remove_to_list(Airship airship)
+        {
+
+        }
+
+        public void remove_to_list(Procedure procedure)
+        {
+
+        }
+
+        public void remove_to_list(Activity activity)
+        {
+
+        }
+
+        public void search(Pilot pilot)
+        {
+
+        }
+
+        public void search(Airship airship)
+        {
+
         }
 
     }
