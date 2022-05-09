@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mainproject
+namespace back_end
 {
     class Procedure
     {
-        string action;
+        /// <summary>
+        /// Klasa zawierająca różnego rodzaju procedury 
+        /// </summary>
+        private string action;
+        private List<Activity> activity_list = new List<Activity>();
     }
 }

@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
-    class Program
+    class samolot
     {
-        static void Main(string[] args)
-        {
-
-            Console.Write("It's a beggining of wonderful story."); 
-
-        }
+        string typ;
+        string wymagane_uprawnienia;
     }
 }

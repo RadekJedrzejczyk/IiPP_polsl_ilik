@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
-    class Program
+    class procedury
     {
-        static void Main(string[] args)
-        {
-
-            Console.Write("It's a beggining of wonderful story."); 
-
-        }
+        string dzialanie;
     }
 }

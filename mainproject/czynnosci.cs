@@ -6,13 +6,9 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
-    class Program
+    class czynnosci
     {
-        static void Main(string[] args)
-        {
+        string rodzaj;
 
-            Console.Write("It's a beggining of wonderful story."); 
-
-        }
     }
 }
