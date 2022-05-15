@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace back_end
 
-{
+{/// <summary>
+ /// Klasa opisująca czynności, które można wykonać w ramach procedury.
+ /// </summary>
     class Activity
-    {/// <summary>
-    /// Klasa opisująca czynności wewnątrz procedury.
-    /// </summary>
+    {
         string type;
 
     }

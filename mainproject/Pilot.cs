@@ -5,13 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace back_end
-{
+{      /// <summary>
+       /// Podstawowa klasa opisująca użytkownika i jego uprawnienia.
+       /// </summary>
     class Pilot
     {
-        /// <summary>
-        /// Podstawowa klasa opisująca użytkownika i jego uprawnienia.
-        /// </summary>
-        /// 
+   
         private string name;
         private string surname;
         private  string licention_number;
@@ -35,18 +34,17 @@ namespace back_end
         public void sign_up(string login, string password)
         {
             //wyszukuje czy login już nie istnieje
-            
             //zapisuje na liście użytkowników 
 
         }
 
-        public int check_logging()
+        public bool check_logging()
         {
             //wyszukuje który użytkownik się loguje
 
             //sprawdza czy podane dane są prawidłowe i zwraca czy logowanie się powiodło
 
-            return 1; 
+            return true; 
         }
 
         public string Name { get => name; set => name = value; }

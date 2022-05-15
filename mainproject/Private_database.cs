@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace back_end
-{
-    class Private_database:Default_database
-    {/// <summary>
-     /// Prywatna baza każdego użytkownika
-     /// </summary>
+{/// <summary>
+ /// Prywatna baza danych, dostępna dla danego użytkownika. 
+ /// </summary>
+    class Private_database :Default_database
+    {
         private string id;
         
         public Private_database (string id)

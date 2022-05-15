@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace back_end
 
-{
+{ /// <summary>
+  /// Domyślna baza danych zaiwerająca losty pilotów, statków powietrznych, procedur i możliwych czynności, a także podstawowe funkcjonalności.
+  /// </summary>
     class Default_database
     {
-        /// <summary>
-        /// Domyślna baza danych, dostępna dla każdego, zawierająca oficjalne dane
-        /// </summary>
+       
         private List<Pilot> users_list = new List<Pilot>();
         protected List<Airship> airship_list = new List<Airship>();
         protected List<Procedure> procedure_blocks_list = new List<Procedure>();
@@ -37,22 +37,22 @@ namespace back_end
 
         }
 
-        public void remove_to_list(Pilot pilot)
+        public void remove_from_list(Pilot pilot)
         { 
 
         }
 
-        public void remove_to_list(Airship airship)
+        public void remove_from_list(Airship airship)
         {
 
         }
 
-        public void remove_to_list(Procedure procedure)
+        public void remove_from_list(Procedure procedure)
         {
 
         }
 
-        public void remove_to_list(Activity activity)
+        public void remove_from_list(Activity activity)
         {
 
         }
