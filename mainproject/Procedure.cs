@@ -14,6 +14,18 @@ namespace back_end
         private string action;
         private List<Activity> activity_list = new List<Activity>();
         /// <summary>
+        /// Funkcja wyświetla listę kolejnych czynności, które trzeba wykonać
+        /// </summary>
+        public void show()
+        { int i = 1;
+            Console.WriteLine(this.action);
+            foreach (var act in activity_list)
+                    {
+                Console.WriteLine(i + ". " + act.What_to_do);
+                i++;
+            }
+        }
+        /// <summary>
         /// Funkcja pozwalająca na wczytanie listy czynności z pliku.
         /// </summary>
         public void read ()

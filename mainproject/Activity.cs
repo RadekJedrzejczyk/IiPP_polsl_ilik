@@ -11,7 +11,8 @@ namespace back_end
  /// </summary>
     class Activity
     {
-        string type;
+        private string what_to_do;
 
+        public string What_to_do { get => what_to_do; set => what_to_do = value; }
     }
 }

@@ -57,14 +57,65 @@ namespace back_end
 
         }
 
-        public void search(Pilot pilot)
+        public List<Pilot>  search_user (string id, bool adv=false)
+        {
+            var founded = new List<Pilot>();
+            if (adv == true) { 
+              
+                return founded;
+            }
+            else {
+                foreach (var person in users_list)
+                {
+                    if (person.User_id == id)
+                    {
+                        Console.WriteLine("Znaleziono");
+                        return founded;
+                    }
+                }
+                return founded;
+            }
+        }
+
+        public void search_airship(string name, bool adv=false)
         {
 
         }
-
-        public void search(Airship airship)
+        /// <summary>
+        /// Sprawdza czy dany login już istnieje.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
+        public bool sign_up_check(string login)
         {
+            foreach (var user in users_list)
+            {
+                if (user.Login == login)
+                {
+                    Console.WriteLine("Ten login jest zajęty");
+                    return false;
+                }
+               
+            }
+            return true;
+        }
+        /// <summary>
+        /// Sprawdza czy logowanie się powiodło.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public bool check_logging(string login, string password)
+        {
+            foreach (var user in users_list)
+            {
+                if (user.Login == login)
+                {
+                    if (user.Password == password) return true;
+                }
+            }
 
+            return false;
         }
 
     }

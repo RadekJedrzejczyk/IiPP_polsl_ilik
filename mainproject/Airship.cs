@@ -10,6 +10,7 @@ namespace back_end
  /// </summary>
     class Airship
     {
+        private string name;
         private string type;
         private string required_legitimation;
         private List<Procedure>procedure_list=new List<Procedure>();
