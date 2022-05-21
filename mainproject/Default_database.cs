@@ -59,11 +59,7 @@ namespace back_end
         }
         public Pilot search(string nazwisko)
         { 
-         for(int i=0; i<users_list.Count();i++)
-            {
-
-            }
-              return users_list[0];
+       
         }
     }
 }
