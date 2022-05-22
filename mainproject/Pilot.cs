@@ -5,16 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace back_end
-{
+{      /// <summary>
+       /// Podstawowa klasa opisująca użytkownika i jego uprawnienia.
+       /// </summary>
     class Pilot
     {
-        /// <summary>
-        /// Podstawowa klasa opisująca użytkownika i jego uprawnienia.
-        /// </summary>
-        /// 
+   
         private string name;
         private string surname;
-        private  string licention_number;
+        private string licention_number;
         private string legitimation_type;
         private string login;
         private string password;
@@ -32,23 +31,13 @@ namespace back_end
             
         }
 
-        public void sign_up(string login, string password)
-        {
-            //wyszukuje czy login już nie istnieje
-            
-            //zapisuje na liście użytkowników 
-
+        /// <summary>
+        /// Wyświetla informacje na temat użytkownika.
+        /// </summary>
+        /// <param name="admin"> Jeżeli 'true' wyswietla również dane poufne</param>
+        public void who_are_you(bool admin = false)
+        { 
         }
-
-        public int check_logging()
-        {
-            //wyszukuje który użytkownik się loguje
-
-            //sprawdza czy podane dane są prawidłowe i zwraca czy logowanie się powiodło
-
-            return 1; 
-        }
-
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname=value; }
         public string Licention_number { get => licention_number; set => licention_number = value; }
