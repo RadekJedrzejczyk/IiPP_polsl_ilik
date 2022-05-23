@@ -121,9 +121,9 @@ namespace back_end
         }
 
         
-        public Pilot search(string nazwisko)
-        { 
+     //   public Pilot search(string nazwisko)
+     //   { 
        
-        }
+    //    }
     }
 }

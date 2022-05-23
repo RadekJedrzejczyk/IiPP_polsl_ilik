@@ -4,68 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace mainproject
+namespace front_end
 {
     /// <summary>
     /// Tutaj program pokazuje glowne menu i daje mozliwosc wyboru co sie chce zrobic
     /// </summary>
     class Menu
     {
+        private string name;
+        private List<Option> option_list = new List<Option>();
 
-        public void Main_menu()
+        public string Name { get => name; set => name = value; }
+        public List<Option> Option_list { get => option_list; set => option_list = value; }
+
+        public Menu (string name)
         {
+            this.name = name;
+        }
+        public void show()
+        {
+            int nr = 1;
+            Console.WriteLine(Name);
+            Console.WriteLine("-----------------------------");
+            foreach (var opt in Option_list)
+            {
+                Console.WriteLine(nr + ". " + opt.Text);
+                nr++;
+            }
 
-            Console.Write("Witaj Uzytkowniku \n");
-            Console.Write("-----------------------------\n");
-            Console.Write("1. Log in|Sign up\n");
-            Console.Write("2. Anonymous\n");
             Console.Write("TYPE THE NUMBER: ");
             string choice = Console.ReadLine();
-            if (choice == "1")
-            {
-                Console.WriteLine("------------------------------");
-                Console.WriteLine("1.Login as User");
-                Console.WriteLine("2.Login as Admin");
-                Console.WriteLine("3.Sign up");
-                string choice2 = Console.ReadLine();
-                if (choice2 == "1")
-                {
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("1.Edit user data");
-                    Console.WriteLine("2.Check data");
-                    Console.WriteLine("3.Download data");
-                    Console.WriteLine("4.Account options");
-                }
-                else if (choice2 == "2")
-                {
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("1.Edit user data");
-                    Console.WriteLine("2.Check data");
-                    Console.WriteLine("3.Download data");
-                    Console.WriteLine("4.Account options");
-                    Console.WriteLine("5.Main database menu");
-                    Console.WriteLine("6.Log's menu");
-                }
-                else if (choice2 == "3")
-                {
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("Register function");
-                }
-                else
-                {
-                    Console.WriteLine("ERROR");
-                }
-            }
-            else if (choice == "2")
-            {
-                Console.WriteLine("tu bedzie publiczna baza");
-            }
-            else
-            {
-                Console.WriteLine("ERROR");
-            }
+            nr = Convert.ToInt32(choice) - 1;
+            _ = Option_list.ElementAt(nr).Function; //to nie działa
 
-            Console.ReadLine();
 
         }
     }
