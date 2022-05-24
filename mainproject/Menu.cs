@@ -21,6 +21,12 @@ namespace front_end
         {
             this.name = name;
         }
+
+        public void add_option(string text, Action function)
+        {
+            var new_option = new front_end.Option(text, function);
+            this.Option_list.Add(new_option);
+        }
         public void show()
         {
             int nr = 1;
@@ -31,13 +37,11 @@ namespace front_end
                 Console.WriteLine(nr + ". " + opt.Text);
                 nr++;
             }
-
             Console.Write("TYPE THE NUMBER: ");
             string choice = Console.ReadLine();
             nr = Convert.ToInt32(choice) - 1;
-            _ = Option_list.ElementAt(nr).Function; //to nie działa
-
-
+            Option_list.ElementAt(nr).Function(); //to nie działa
+           
         }
     }
 }
