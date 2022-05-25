@@ -11,12 +11,16 @@ namespace back_end
   /// </summary>
     class Default_database
     {
-       
+
         private List<Pilot> users_list = new List<Pilot>();
         protected List<Airship> airship_list = new List<Airship>();
         protected List<Procedure> procedure_blocks_list = new List<Procedure>();
         protected List<Activity> activity_blocks_list = new List<Activity>();
 
+        public void test()
+        {
+            Console.WriteLine("testowy komunikat");
+        }
         public void add_to_list(Pilot pilot)
         {
             users_list.Add(pilot);
@@ -39,13 +43,13 @@ namespace back_end
         }
 
         public void remove_from_list(Pilot pilot)
-        { 
+        {
             users_list.Remove(pilot);
         }
 
         public void remove_from_list(Airship airship)
         {
-       airship_list.Remove((Airship)airship);
+            airship_list.Remove((Airship)airship);
         }
 
         public void remove_from_list(Procedure procedure)
@@ -56,17 +60,19 @@ namespace back_end
         public void remove_from_list(Activity activity)
         {
             activity_blocks_list.Remove(activity);
-        
+
         }
 
-        public List<Pilot>  search_user (string id, bool adv=false)
+        public List<Pilot> search_user(string id, bool adv = false)
         {
             var founded = new List<Pilot>();
-            if (adv == true) { 
-              
+            if (adv == true)
+            {
+
                 return founded;
             }
-            else {
+            else
+            {
                 foreach (var person in users_list)
                 {
                     if (person.User_id == id)
@@ -79,7 +85,7 @@ namespace back_end
             }
         }
 
-        public void search_airship(string name, bool adv=false)
+        public void search_airship(string name, bool adv = false)
         {
 
         }
@@ -97,7 +103,7 @@ namespace back_end
                     Console.WriteLine("Ten login jest zajęty");
                     return false;
                 }
-               
+
             }
             return true;
         }
@@ -120,10 +126,10 @@ namespace back_end
             return false;
         }
 
-        
-        public Pilot search(string nazwisko)
-        { 
-       
-        }
+
+        //   public Pilot search(string nazwisko)
+        //   { 
+
+        //    }
     }
 }

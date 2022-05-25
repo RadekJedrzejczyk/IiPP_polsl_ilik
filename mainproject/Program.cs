@@ -11,10 +11,24 @@ namespace mainproject
     {
         static void Main(string[] args)
         {
+            var logger = new front_end.Logger();
+            var signup = new front_end.Logger();
 
-            Menu menu = new Menu();
-            menu.Main_menu();
+            ///deklaruje różne menu
+            var main_menu = new front_end.Menu("Main Menu");
+            var log_in_menu = new front_end.Menu("Log in| Sign up");
+            var anonymous_menu = new front_end.Menu("Guest");
 
+            ///dodaje różne opcje
+            main_menu.add_option("Log in|Sign up", log_in_menu.show);
+            main_menu.add_option("Anonymous", anonymous_menu.show);
+
+            log_in_menu.add_option("Log in", logger.login);
+            log_in_menu.add_option("Sign in", signup.sign_up);
+
+            ///właściwy program 
+            main_menu.show();
+            Console.ReadKey();
         }
     }
 }
