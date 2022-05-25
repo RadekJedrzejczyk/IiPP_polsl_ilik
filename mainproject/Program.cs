@@ -11,8 +11,8 @@ namespace mainproject
     {
         static void Main(string[] args)
         {
-            var logger = new front_end.Logger();
-            var signup = new front_end.Logger();
+            var logger = new front_end.Login_assistant();
+            var signup = new front_end.Login_assistant();
 
             ///deklaruje różne menu
             var main_menu = new front_end.Menu("Main Menu");
