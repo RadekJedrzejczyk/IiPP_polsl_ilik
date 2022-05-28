@@ -12,7 +12,7 @@ namespace mainproject
         static void Main(string[] args)
         {
             var database = new back_end.Default_database();
-            database.test();
+            database.test(); //to przypisujcie jak nie wiecie co robić - database.test;
 
             var logger = new front_end.Login_assistant();
             var signup = new front_end.Login_assistant();
