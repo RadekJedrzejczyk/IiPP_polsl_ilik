@@ -11,6 +11,9 @@ namespace mainproject
     {
         static void Main(string[] args)
         {
+            var database = new back_end.Default_database();
+            database.test();
+
             var logger = new front_end.Login_assistant();
             var signup = new front_end.Login_assistant();
 
