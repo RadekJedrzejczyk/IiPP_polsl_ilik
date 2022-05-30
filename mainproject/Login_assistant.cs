@@ -8,38 +8,48 @@ namespace front_end
 {
     class Login_assistant
     {
-        public string text;
-        private string text2;
+        private back_end.Default_database database;
 
-        public string Text { get => text; set => text = value; }
-        public string Text2 { get => text2; set => text2 = value; }
-
+        public Login_assistant (back_end.Default_database database)
+        {
+            this.database = database;
+        }
         public string ask_for(string text)
         {
             Console.WriteLine("Podaj " + text);
-            text2 = Console.ReadLine();
-            return text2;
+            text = Console.ReadLine();
+            return text;
 
         }
         public void login()
         {
-            var pytanie = new front_end.Login_assistant();
+            var question = new front_end.Login_assistant(database);
 
-            pytanie.ask_for("login ziomek");
-            pytanie.ask_for("hasło ziomek");
-
+            string login = question.ask_for("login");
+            string password = question.ask_for("hasło");
+            if (database.check_logging(login, password) == true)
+            {
+                return; //tutaj powinien wysyłać do odpowiedniego menu
+            }
+            return; // coś powinien robić
         }
 
         public void sign_up()
         {
-            var pytanie = new front_end.Login_assistant();
-            pytanie.ask_for("imie ziomek");
-            pytanie.ask_for("nazwisko ziomek");
-            pytanie.ask_for("login ziomek");
-            pytanie.ask_for("hasło ziomek");
-            pytanie.ask_for("numer licencji ziomek");
-            pytanie.ask_for("typ legitymacji ziomek");
-
+            var question = new front_end.Login_assistant(database);
+            string name = question.ask_for("imie");
+            string surname = question.ask_for("nazwisko");
+            string login = question.ask_for("login");
+            string password = question.ask_for("hasło");
+            string lic_num = question.ask_for("numer licencji");
+            string legitimation_type= question.ask_for("typ legitymacji");
+            if (database.sign_up_check(login) == true)
+            {//tworzy użytkownika
+                database.add_to_list(name, surname, lic_num, legitimation_type,login,password);
+                return; 
+            }
+            return; // coś powinien robić
+            
 
         }
     }

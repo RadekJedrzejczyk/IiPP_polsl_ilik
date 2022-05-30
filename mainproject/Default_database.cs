@@ -13,6 +13,7 @@ namespace back_end
     {
 
         private List<Pilot> users_list = new List<Pilot>();
+        private int user_id_count = 0;
         protected List<Airship> airship_list = new List<Airship>();
         protected List<Procedure> procedure_blocks_list = new List<Procedure>();
         protected List<Activity> activity_blocks_list = new List<Activity>();
@@ -21,10 +22,12 @@ namespace back_end
         {
             Console.WriteLine("testowy komunikat");
         }
-        public void add_to_list(Pilot pilot)
+        public void add_to_list(string name, string surname, string licention_number, string legitimation_type, string login, string password)
         {
+            var pilot = new Pilot(name, surname, licention_number, legitimation_type, user_id_count, login, password);
             users_list.Add(pilot);
-
+            user_id_count++;
+            Console.WriteLine("Dodano użytkownika do bazy danych");
         }
 
         public void add_to_list(Airship airship)
@@ -119,10 +122,14 @@ namespace back_end
             {
                 if (user.Login == login)
                 {
-                    if (user.Password == password) return true;
+                    if (user.Password == password)
+                    {
+                        Console.WriteLine("Logowanie się powiodło");
+                        return true;
+                    }
                 }
             }
-
+            Console.WriteLine("Logowanie się nie udało");
             return false;
         }
 
