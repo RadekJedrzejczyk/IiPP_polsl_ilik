@@ -17,7 +17,9 @@ namespace front_end
         public string Name { get => name; set => name = value; }
         public List<Option> Option_list { get => option_list; set => option_list = value; }
 
+
         public Menu (string name)
+
         {
             this.name = name;
         }
@@ -41,7 +43,7 @@ namespace front_end
             string choice = Console.ReadLine();
             nr = Convert.ToInt32(choice) - 1;
             Option_list.ElementAt(nr).Function(); //to nie działa
-           
+
         }
     }
 }

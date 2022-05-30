@@ -13,10 +13,11 @@ namespace front_end
         public string Text { get => text; set => text = value; }
         public Action Function { get => function; set => function = value; }
 
-        public Option (string text, Action function)
+
+        public Option(string text, Action function)
         {
             this.text = text;
             this.function = function; //idk czy dobrze (raczej źle)
-                               }
+        }
     }
 }
