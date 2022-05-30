@@ -17,6 +17,10 @@ namespace back_end
         protected List<Procedure> procedure_blocks_list = new List<Procedure>();
         protected List<Activity> activity_blocks_list = new List<Activity>();
 
+        public void test()
+        {
+            Console.WriteLine("testowy komunikat");
+        }
         public void add_to_list(Pilot pilot)
         {
             users_list.Add(pilot);
@@ -121,9 +125,9 @@ namespace back_end
         }
 
         
-        public Pilot search(string nazwisko)
-        { 
+     //   public Pilot search(string nazwisko)
+     //   { 
        
-        }
+    //    }
     }
 }
