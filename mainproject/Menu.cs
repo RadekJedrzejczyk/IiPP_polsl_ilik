@@ -17,7 +17,9 @@ namespace front_end
         public string Name { get => name; set => name = value; }
         public List<Option> Option_list { get => option_list; set => option_list = value; }
 
-        public Menu(string name)
+
+        public Menu (string name)
+
         {
             this.name = name;
         }
