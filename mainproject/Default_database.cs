@@ -22,13 +22,46 @@ namespace back_end
         {
             Console.WriteLine("testowy komunikat");
         }
- front-end
         public void add_to_list(string name, string surname, string licention_number, string legitimation_type, string login, string password)
-
+        { 
             var pilot = new Pilot(name, surname, licention_number, legitimation_type, user_id_count, login, password);
             users_list.Add(pilot);
             user_id_count++;
             Console.WriteLine("Dodano użytkownika do bazy danych");
+        }
+
+        public void show()
+        {
+            int i = 1;
+            Console.WriteLine("Oto lista maszyn:");
+            foreach (var plane in airship_list)
+            {
+                Console.WriteLine(i +". "+ plane.Name);
+                i++;
+            }
+
+            Console.WriteLine("Czy chcesz zobaczyć listę procedur i dodatkowe informacje dla konkretnej maszyny? t/n");
+            string decision;
+            decision = Console.ReadLine();
+
+            if (decision=="t")
+            {
+                Console.WriteLine("Dla której? (Podaj numer)");
+                i = Convert.ToInt32(Console.ReadLine());
+                var plane = airship_list.ElementAt(i-1);
+                Console.WriteLine("Model: " + plane.Name + "Typ statku powietrznego: " + plane.Type + "Wymagane uprawnienia: " + plane.Required_legitimation);
+                Console.WriteLine("Procedury: ");
+                foreach (var proc in plane.Procedure_list)
+                {
+                    Console.WriteLine(proc.Action + ": ");
+                    foreach (var act in proc.Activity_list)
+                    {
+                        i = 1;
+                        Console.WriteLine(i + ". " + act.What_to_do);
+                    }
+                }
+            }
+            return;
         }
 
         public void add_to_list(Airship airship)

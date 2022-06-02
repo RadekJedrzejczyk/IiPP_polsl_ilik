@@ -13,13 +13,17 @@ namespace back_end
 
         private string action;
         private List<Activity> activity_list = new List<Activity>();
+
+        public string Action { get => action; set => action = value; }
+        public List<Activity> Activity_list { get => activity_list; set => activity_list = value; }
+
         /// <summary>
         /// Funkcja wyświetla listę kolejnych czynności, które trzeba wykonać
         /// </summary>
         public void show()
         { int i = 1;
-            Console.WriteLine(this.action);
-            foreach (var act in activity_list)
+            Console.WriteLine(this.Action);
+            foreach (var act in Activity_list)
                     {
                 Console.WriteLine(i + ". " + act.What_to_do);
                 i++;
