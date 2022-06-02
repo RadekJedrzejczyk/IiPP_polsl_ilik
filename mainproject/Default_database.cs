@@ -22,8 +22,9 @@ namespace back_end
         {
             Console.WriteLine("testowy komunikat");
         }
+ front-end
         public void add_to_list(string name, string surname, string licention_number, string legitimation_type, string login, string password)
-        {
+
             var pilot = new Pilot(name, surname, licention_number, legitimation_type, user_id_count, login, password);
             users_list.Add(pilot);
             user_id_count++;
@@ -134,9 +135,11 @@ namespace back_end
         }
 
 
+
         //   public Pilot search(string nazwisko)
         //   { 
 
         //    }
+
     }
 }
