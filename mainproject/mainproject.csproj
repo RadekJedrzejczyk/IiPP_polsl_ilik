@@ -44,7 +44,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity.cs" />
-    <Compile Include="Asker.cs" />
     <Compile Include="Default_database.cs" />
     <Compile Include="File_assistant.cs" />
     <Compile Include="Login_assistant.cs" />
