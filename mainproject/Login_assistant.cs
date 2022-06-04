@@ -14,40 +14,34 @@ namespace front_end
         {
             this.database = database;
         }
-        public string ask_for(string text)
+    
+        public void login(Action if_true)
         {
-            Console.WriteLine("Podaj " + text);
-            text = Console.ReadLine();
-            return text;
-
-        }
-        public void login()
-        {
-            var question = new front_end.Login_assistant(database);
-
-            string login = question.ask_for("login");
-            string password = question.ask_for("hasło");
+           
+            string login = Menu_assistant.ask_for("login");
+            string password = Menu_assistant.ask_for("hasło");
             if (database.check_logging(login, password) == true)
             {
-                return; //tutaj powinien wysyłać do odpowiedniego menu
+                if_true(); 
             }
             return; // coś powinien robić
         }
 
         public void sign_up()
         {
-            var question = new front_end.Login_assistant(database);
-            string name = question.ask_for("imie");
-            string surname = question.ask_for("nazwisko");
-            string login = question.ask_for("login");
-            string password = question.ask_for("hasło");
-            string lic_num = question.ask_for("numer licencji");
-            string legitimation_type= question.ask_for("typ legitymacji");
+            string name = Menu_assistant.ask_for("imie");
+            string surname = Menu_assistant.ask_for("nazwisko");
+            string login = Menu_assistant.ask_for("login");
+            string password = Menu_assistant.ask_for("hasło");
+            string lic_num = Menu_assistant.ask_for("numer licencji");
+            string legitimation_type= Menu_assistant.ask_for("typ legitymacji");
             if (database.sign_up_check(login) == true)
-            {//tworzy użytkownika
+            {
                 database.add_to_list(name, surname, lic_num, legitimation_type,login,password);
                 return; 
             }
+            Console.WriteLine("Taki użytkownik już istnieje");
+            Console.ReadKey();
             return; // coś powinien robić
             
 

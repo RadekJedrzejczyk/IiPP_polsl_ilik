@@ -43,11 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Activity.cs" />
+    <Compile Include="Database.editor.cs" />
     <Compile Include="Default_database.cs" />
     <Compile Include="File_assistant.cs" />
     <Compile Include="Login_assistant.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Menu_assistant.cs" />
     <Compile Include="Option.cs" />
     <Compile Include="Pilot.cs" />
     <Compile Include="Private_database.cs" />

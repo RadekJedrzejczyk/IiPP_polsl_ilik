@@ -12,10 +12,16 @@ namespace back_end
     {
 
         private string action;
-        private List<Activity> activity_list = new List<Activity>();
+        private List<string> activity_list = new List<string>();
 
         public string Action { get => action; set => action = value; }
-        public List<Activity> Activity_list { get => activity_list; set => activity_list = value; }
+        public List<string> Activity_list { get => activity_list; set => activity_list = value; }
+
+        public Procedure (string action)
+        {
+            this.action = action;
+
+        }
 
         /// <summary>
         /// Funkcja wyświetla listę kolejnych czynności, które trzeba wykonać
@@ -25,7 +31,7 @@ namespace back_end
             Console.WriteLine(this.Action);
             foreach (var act in Activity_list)
                     {
-                Console.WriteLine(i + ". " + act.What_to_do);
+                Console.WriteLine(i + ". " + act);
                 i++;
             }
         }
