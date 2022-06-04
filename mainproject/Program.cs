@@ -22,9 +22,9 @@ namespace mainproject
             var anonymous_menu = new front_end.Menu("Guest");
             var logged_menu = new front_end.Menu("Logged");
             var admin_menu = new front_end.Menu("Admin");
-            var main_database_menu = new front_end.Menu("Main Database Options");
-            var main_database_editor = new front_end.Menu("Edit Main Database");
-            var user_database_menu = new front_end.Menu("Private Database Menu");
+            var main_database_menu = new front_end.Menu("Main Database_assistant Options");
+            var main_database_editor = new front_end.Menu("Edit Main Database_assistant");
+            var user_database_menu = new front_end.Menu("Private Database_assistant Menu");
             var logs_menu = new front_end.Menu("Logs menu");
         
             ///dodaje różne opcje 
@@ -59,6 +59,7 @@ namespace mainproject
             main_database_menu.add_option("Download", main_database.test); //
             main_database_menu.add_option("Load", main_database.test); //
             main_database_menu.add_option("Edit", main_database_editor.show);
+
 
             main_database_editor.add_option("Add", main_database.test); //
             main_database_editor.add_option("Remove", main_database.test); // 

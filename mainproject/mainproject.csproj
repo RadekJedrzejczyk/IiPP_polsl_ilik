@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database.editor.cs" />
+    <Compile Include="Database_assistant.cs" />
     <Compile Include="Default_database.cs" />
     <Compile Include="File_assistant.cs" />
     <Compile Include="Login_assistant.cs" />
