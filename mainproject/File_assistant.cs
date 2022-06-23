@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace back_end
 {
     class File_assistant
@@ -58,7 +59,7 @@ namespace back_end
                     }
                     else
                     {
-                        procedure_list.ElementAt(loaded_list.IndexOf(text)).Activity_list.Add(text);
+                        procedure_list.ElementAt(procedure_list.Count-1).Activity_list.Add(text);
                     }
 
                 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace mainproject
 {
     class Program
@@ -14,7 +15,7 @@ namespace mainproject
             var main_database = new back_end.Default_database();
             var front_assistant = new front_end.Login_assistant(main_database); //obiekt pomocniczy do bardziej zaawansowanych zadań
 
-            main_database.Procedure_blocks_list = back_end.File_assistant.load_procedures(@"D:\Desktop\z uczelni\IiPP\semestr 2\projekt1_bazalotnicza\procedury.txt"); //ścieżka do pliku z procedruami
+            main_database.Procedure_blocks_list = back_end.File_assistant.load_procedures("procedury.txt"); //ścieżka do pliku z procedruami
 
             ///deklaruje różne menu
             var main_menu = new front_end.Menu("Main Menu");
