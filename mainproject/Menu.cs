@@ -29,6 +29,7 @@ namespace front_end
             var new_option = new front_end.Option(text, function);
             this.Option_list.Add(new_option);
         }
+
         public void show()
         {
             int nr = 1;

@@ -29,6 +29,43 @@ namespace back_end
             reader.Close();
             return list;
         }
+
+
+     //   public static List<Procedure> load_activities(string from_where)
+       // { 
+
+        //}
+
+        public static List<Procedure> load_procedures(string from_where)
+        {
+            var loaded_list = load(from_where);
+            var procedure_list = new List<Procedure>();
+
+            bool procedure = false;
+            foreach (var text in loaded_list)
+            {
+                if (text == ".")
+                {
+                    procedure = true;
+                }
+                else
+                {
+                    if (procedure == true)
+                    {
+                        var proc = new Procedure(text);
+                        procedure_list.Add(proc);
+                        procedure = false;
+                    }
+                    else
+                    {
+                        procedure_list.ElementAt(loaded_list.IndexOf(text)).Activity_list.Add(text);
+                    }
+
+                }
+
+            }
+            return procedure_list;
+        }
         /// <summary>
         /// Funkcja zapisująca do pliku.
         /// </summary>
