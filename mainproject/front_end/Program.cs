@@ -31,9 +31,6 @@ namespace mainproject
             var logs_menu = new front_end.Menu("Logs menu");
 
             ///dodaje różne opcje 
-
-            // Symbol '//' w miejscach gdzie trzeba podłączyć funkcje               !!!!!!!
-
             main_menu.add_option("Log in|Sign up", log_in_menu.show);
             main_menu.add_option("Anonymous", anonymous_menu.show);
 
@@ -49,19 +46,11 @@ namespace mainproject
             logged_menu.add_option("Show public database", database_assistant.show); 
             logged_menu.add_option("Show your database", () => database_assistant.show_private(front_assistant.Logged_user.Private_database)); 
 
-            user_database_menu.add_option("Add", main_database.test); //
-            user_database_menu.add_option("Remove", main_database.test); //
-            user_database_menu.add_option("Load", main_database.test); //
+            user_database_menu.add_option("Add_airship", () => { var temp_assistant = new front_end.Database_assistant(front_assistant.Logged_user.Private_database); temp_assistant.add_airship(); }); 
+            user_database_menu.add_option("Remove_airship", () => { var temp_assistant = new front_end.Database_assistant(front_assistant.Logged_user.Private_database); temp_assistant.delete(); }); 
 
+            admin_menu.add_option("Manage main database", () => { Console.WriteLine("Nothing is here ;)"); Console.ReadKey(); });
 
-            admin_menu.add_option("Manage main database", main_database_menu.show);
-
-            main_database_menu.add_option("Download", main_database.test); //
-            main_database_menu.add_option("Load", main_database.test); //
-            main_database_menu.add_option("Edit", main_database_editor.show);
-
-            main_database_editor.add_option("Add", main_database.test); //
-            main_database_editor.add_option("Remove", main_database.test); // 
 
       
             ///uruchomienie

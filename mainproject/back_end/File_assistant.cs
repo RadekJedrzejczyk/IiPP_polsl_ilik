@@ -77,8 +77,10 @@ namespace back_end
 
         public static void save_airship_database(back_end.Default_database database, string where)
         {
-            var data_list = new List<string>();
-            data_list.Add("Airships:");
+            var data_list = new List<string>
+            {
+                "Airships:"
+            };
             foreach (var airship in database.Airship_list)
             {
                 data_list.Add(airship.Name);

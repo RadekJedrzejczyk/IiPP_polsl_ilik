@@ -62,53 +62,6 @@ namespace back_end
             Procedure_blocks_list.Remove(procedure);
         }
 
-
-        public List<Pilot> search_user(string id, bool adv = false)
-        {
-            var founded = new List<Pilot>();
-            if (adv == true)
-            {
-
-                return founded;
-            }
-            else
-            {
-                foreach (var person in Users_list)
-                {
-                    if (person.User_id == id)
-                    {
-                        Console.WriteLine("Znaleziono");
-                        return founded;
-                    }
-                }
-                return founded;
-            }
-        }
-
-        public void search_airship(string name, bool adv = false)
-        {
-
-        }
-        /// <summary>
-        /// Sprawdza czy dany login już istnieje.
-        /// </summary>
-        /// <param name="login"></param>
-        /// <returns></returns>
-        public bool sign_up_check(string login)
-        {
-            foreach (var user in Users_list)
-            {
-                if (user.Login == login)
-                {
-                    Console.WriteLine("Ten login jest zajęty");
-                    return false;
-                }
-
-            }
-            return true;
-        }
-        /// <summary>
-        /// Sprawdza czy logowanie się powiodło.
         /// </summary>
         /// <param name="login"></param>
         /// <param name="password"></param>
