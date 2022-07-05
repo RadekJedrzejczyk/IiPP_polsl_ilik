@@ -61,7 +61,24 @@ namespace back_end
         {
             Procedure_blocks_list.Remove(procedure);
         }
+        /// <summary>
+        /// Sprawdza czy dany login już istnieje.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
+        public bool sign_up_check(string login)
+        {
+            foreach (var user in Users_list)
+            {
+                if (user.Login == login)
+                {
+                    Console.WriteLine("Ten login jest zajęty");
+                    return false;
+                }
 
+            }
+            return true;
+        }
         /// </summary>
         /// <param name="login"></param>
         /// <param name="password"></param>
