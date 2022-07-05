@@ -32,19 +32,27 @@ namespace front_end
 
         public void show()
         {
-            int nr = 1;
-            Console.WriteLine(Name);
-            Console.WriteLine("-----------------------------");
-            foreach (var opt in Option_list)
+            while (true)
             {
-                Console.WriteLine(nr + ". " + opt.Text);
-                nr++;
+                int nr = 1;
+                Console.WriteLine();
+                Console.WriteLine(Name);
+                Console.WriteLine("-----------------------------");
+                foreach (var opt in Option_list)
+                {
+                    Console.WriteLine(nr + ". " + opt.Text);
+                    nr++;
+                }
+                Console.WriteLine(0 + ". " +" Go back");
+                Console.Write("TYPE THE NUMBER: ");
+                string choice = Console.ReadLine();
+                nr = Convert.ToInt32(choice);
+                if (nr == 0) break;
+                Console.WriteLine();
+                Option_list.ElementAt(nr-1).Function();
+                Console.Clear();
             }
-            Console.Write("TYPE THE NUMBER: ");
-            string choice = Console.ReadLine();
-            nr = Convert.ToInt32(choice) - 1;
-            Option_list.ElementAt(nr).Function(); //to nie działa
-
+        
         }
     }
 }
