@@ -36,40 +36,6 @@ namespace back_end
         }
 
 
-        public void show()
-        {
-            int i = 1;
-            Console.WriteLine("Oto lista maszyn:");
-            foreach (var plane in Airship_list)
-            {
-                Console.WriteLine(i +". "+ plane.Name);
-                i++;
-            }
-
-            Console.WriteLine("Czy chcesz zobaczyć listę procedur i dodatkowe informacje dla konkretnej maszyny? t/n");
-            string decision;
-            decision = Console.ReadLine();
-
-            if (decision=="t")
-            {
-                Console.WriteLine("Dla której? (Podaj numer)");
-                i = Convert.ToInt32(Console.ReadLine());
-                var plane = Airship_list.ElementAt(i-1);
-                Console.WriteLine("Model: " + plane.Name + "Typ statku powietrznego: " + plane.Type + "Wymagane uprawnienia: " + plane.Required_legitimation);
-                Console.WriteLine("Procedury: ");
-                foreach (var proc in plane.Procedure_list)
-                {
-                    Console.WriteLine(proc.Action + ": ");
-                    foreach (var act in proc.Activity_list)
-                    {
-                        i = 1;
-                        Console.WriteLine(i + ". " + act);
-                    }
-                }
-            }
-            return;
-        }
-
         public void add_to_list(Airship airship)
         {
             Airship_list.Add(airship);
@@ -95,34 +61,6 @@ namespace back_end
         {
             Procedure_blocks_list.Remove(procedure);
         }
-
-
-        public List<Pilot> search_user(string id, bool adv = false)
-        {
-            var founded = new List<Pilot>();
-            if (adv == true)
-            {
-
-                return founded;
-            }
-            else
-            {
-                foreach (var person in Users_list)
-                {
-                    if (person.User_id == id)
-                    {
-                        Console.WriteLine("Znaleziono");
-                        return founded;
-                    }
-                }
-                return founded;
-            }
-        }
-
-        public void search_airship(string name, bool adv = false)
-        {
-
-        }
         /// <summary>
         /// Sprawdza czy dany login już istnieje.
         /// </summary>
@@ -141,8 +79,6 @@ namespace back_end
             }
             return true;
         }
-        /// <summary>
-        /// Sprawdza czy logowanie się powiodło.
         /// </summary>
         /// <param name="login"></param>
         /// <param name="password"></param>
@@ -163,13 +99,6 @@ namespace back_end
             Console.WriteLine("Logowanie się nie udało");
             return false;
         }
-
-
-
-        //   public Pilot search(string nazwisko)
-        //   { 
-
-        //    }
 
     }
 }

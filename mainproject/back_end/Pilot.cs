@@ -19,6 +19,7 @@ namespace back_end
         private string password;
         private string user_id;
         private List<Airship> available_airship_list = new List<Airship>();
+        private Private_database private_database;
 
         public Pilot(string name, string surname, string licention_number, string legitimation_type, int user_id_count, string login, string password)
         {
@@ -38,7 +39,10 @@ namespace back_end
         /// </summary>
         /// <param name="admin"> Jeżeli 'true' wyswietla również dane poufne</param>
         public void who_are_you(bool admin = false)
-        { 
+        {
+            Console.WriteLine(Name + Surname + ", licention number: " + Licention_number + ". Legitimation type: " + Legitimation_type + ".");
+            if (admin == true) Console.WriteLine ("User_id: " + User_id+ ". Login: "+ Login+". Password: "+ Password+ ".");
+            Console.ReadKey();
         }
         public string Name { get => name; set => name = value; }
         public string Surname { get => surname; set => surname=value; }
@@ -47,5 +51,6 @@ namespace back_end
         public string Login { get => login; set => login = value; }
         public string Password { get => password; set => password = value; }
         public string User_id { get => user_id; }
+        public Private_database Private_database { get => private_database; set => private_database = value; }
     }
 }
