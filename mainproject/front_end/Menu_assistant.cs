@@ -8,11 +8,9 @@ namespace front_end
 {
     class Menu_assistant
     {
-
-
         static public string ask_for(string text)
         {
-            Console.WriteLine("Podaj " + text);
+            Console.WriteLine("Enter " + text);
             text = Console.ReadLine();
             return text;
         }

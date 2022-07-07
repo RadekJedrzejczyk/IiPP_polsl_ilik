@@ -43,19 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database_assistant.cs" />
-    <Compile Include="Default_database.cs" />
-    <Compile Include="File_assistant.cs" />
-    <Compile Include="Login_assistant.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="Menu_assistant.cs" />
-    <Compile Include="Option.cs" />
-    <Compile Include="Pilot.cs" />
-    <Compile Include="Private_database.cs" />
-    <Compile Include="Procedure.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="front_end\Database_assistant.cs" />
+    <Compile Include="back_end\Default_database.cs" />
+    <Compile Include="back_end\File_assistant.cs" />
+    <Compile Include="front_end\Login_assistant.cs" />
+    <Compile Include="back_end\Menu.cs" />
+    <Compile Include="front_end\Menu_assistant.cs" />
+    <Compile Include="back_end\Option.cs" />
+    <Compile Include="back_end\Pilot.cs" />
+    <Compile Include="back_end\Private_database.cs" />
+    <Compile Include="back_end\Procedure.cs" />
+    <Compile Include="front_end\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Airship.cs" />
+    <Compile Include="back_end\Airship.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

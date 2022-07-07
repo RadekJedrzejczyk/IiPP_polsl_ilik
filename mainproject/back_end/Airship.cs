@@ -15,6 +15,13 @@ namespace back_end
         private string required_legitimation;
         private List<Procedure>procedure_list=new List<Procedure>();
 
+        public Airship(string name, string type, string required_legitimation)
+        {
+            this.name = name;
+            this.type = type;
+            this.required_legitimation = required_legitimation;
+        }
+
         public string Name { get => name; set => name = value; }
         public string Type { get => type; set => type = value; }
         public string Required_legitimation { get => required_legitimation; set => required_legitimation = value; }

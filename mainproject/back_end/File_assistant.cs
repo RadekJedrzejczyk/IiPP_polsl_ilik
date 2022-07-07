@@ -31,12 +31,6 @@ namespace back_end
             return list;
         }
 
-
-     //   public static List<Procedure> load_activities(string from_where)
-       // { 
-
-        //}
-
         public static List<Procedure> load_procedures(string from_where)
         {
             var loaded_list = load(from_where);
@@ -79,6 +73,31 @@ namespace back_end
             {
                 writer.WriteLine(line);
             }
+        }
+
+        public static void save_airship_database(back_end.Default_database database, string where)
+        {
+            var data_list = new List<string>
+            {
+                "Airships:"
+            };
+            foreach (var airship in database.Airship_list)
+            {
+                data_list.Add(airship.Name);
+                data_list.Add(airship.Type);
+                data_list.Add(airship.Required_legitimation);
+                foreach (var proc in airship.Procedure_list)
+                {
+                    data_list.Add(".");
+                    data_list.Add(proc.Action);
+                    foreach(var act in proc.Activity_list)
+                    {
+                        data_list.Add(act);
+                    }
+                }
+                data_list.Add("-");
+            }
+            save(data_list, where);
         }
     }
 }
