@@ -19,7 +19,9 @@ namespace back_end
         private string password;
         private string user_id;
         private List<Airship> available_airship_list = new List<Airship>();
-
+        /// <summary>
+        /// funkcja dopisujaca zawy imienia i nazwiska numerlicencji rodzaj legitymacji numer urzytkownika i hasło
+        /// </summary>
         public Pilot(string name, string surname, string licention_number, string legitimation_type, int user_id_count, string login, string password)
         {
             this.name = name;

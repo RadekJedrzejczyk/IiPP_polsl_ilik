@@ -1,0 +1,8 @@
+C:\Users\Marcel\Desktop\Nowy folder (6)\IiPP_polsl_ilik-master\mainproject\obj\Debug\mainproject.csproj.AssemblyReference.cache
+C:\Users\Marcel\Desktop\Nowy folder (6)\IiPP_polsl_ilik-master\mainproject\obj\Debug\mainproject.csproj.SuggestedBindingRedirects.cache
+C:\Users\Marcel\Desktop\Nowy folder (6)\IiPP_polsl_ilik-master\mainproject\obj\Debug\mainproject.csproj.CoreCompileInputs.cache
+C:\Users\Marcel\Desktop\Nowy folder (6)\IiPP_polsl_ilik-master\mainproject\bin\Debug\mainproject.exe.config
+C:\Users\Marcel\Desktop\Nowy folder (6)\IiPP_polsl_ilik-master\mainproject\bin\Debug\mainproject.exe
+C:\Users\Marcel\Desktop\Nowy folder (6)\IiPP_polsl_ilik-master\mainproject\bin\Debug\mainproject.pdb
+C:\Users\Marcel\Desktop\Nowy folder (6)\IiPP_polsl_ilik-master\mainproject\obj\Debug\mainproject.exe
+C:\Users\Marcel\Desktop\Nowy folder (6)\IiPP_polsl_ilik-master\mainproject\obj\Debug\mainproject.pdb

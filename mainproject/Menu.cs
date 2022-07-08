@@ -18,6 +18,10 @@ namespace front_end
         public List<Option> Option_list { get => option_list; set => option_list = value; }
 
 
+        /// <summary>
+        /// Wyświetla informacje na temat użytkownika.
+        /// </summary>
+        /// <param name=name></param>
         public Menu (string name)
 
         {
@@ -29,9 +33,12 @@ namespace front_end
             var new_option = new front_end.Option(text, function);
             this.Option_list.Add(new_option);
         }
-
+        /// <summary>
+        /// funckja wypisująca listye opcji
+        /// </summary>
         public void show()
         {
+          
             int nr = 1;
             Console.WriteLine(Name);
             Console.WriteLine("-----------------------------");
@@ -44,7 +51,7 @@ namespace front_end
             string choice = Console.ReadLine();
             nr = Convert.ToInt32(choice) - 1;
             Option_list.ElementAt(nr).Function(); //to nie działa
-
         }
+        
     }
 }

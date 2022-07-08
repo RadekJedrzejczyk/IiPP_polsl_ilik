@@ -14,90 +14,81 @@ namespace back_end
 
         private List<Pilot> users_list = new List<Pilot>();
         private int user_id_count = 0;
-        private List<Airship> airship_list = new List<Airship>();
-        private List<Procedure> procedure_blocks_list = new List<Procedure>();
-
-        public List<Pilot> Users_list { get => users_list; set => users_list = value; }
-        public int User_id_count { get => user_id_count; set => user_id_count = value; }
-        public List<Airship> Airship_list { get => airship_list; set => airship_list = value; }
-        public List<Procedure> Procedure_blocks_list { get => procedure_blocks_list; set => procedure_blocks_list = value; }
-
-
+        protected List<Airship> airship_list = new List<Airship>();
+        protected List<Procedure> procedure_blocks_list = new List<Procedure>();
+        protected List<Activity> activity_blocks_list = new List<Activity>();
+        /// <summary>
+        /// testowa fukncja wypisująca
+        /// </summary>
         public void test()
         {
             Console.WriteLine("testowy komunikat");
         }
+
+        /// <summary>
+        /// fukcja przypisująca dane do listy pilotów
+        /// </summary>
         public void add_to_list(string name, string surname, string licention_number, string legitimation_type, string login, string password)
-        { 
-            var pilot = new Pilot(name, surname, licention_number, legitimation_type, User_id_count, login, password);
-            Users_list.Add(pilot);
-            User_id_count++;
+        {  
+            var pilot = new Pilot(name, surname, licention_number, legitimation_type, user_id_count, login, password);
+            users_list.Add(pilot);
+            user_id_count++;
             Console.WriteLine("Dodano użytkownika do bazy danych");
         }
-
-
-        public void show()
+    /// <summary>
+    /// fucncja dodająca statek powietrzny do listy 
+    /// </summary>
+    public void add_to_list(Airship airship)
         {
-            int i = 1;
-            Console.WriteLine("Oto lista maszyn:");
-            foreach (var plane in Airship_list)
-            {
-                Console.WriteLine(i +". "+ plane.Name);
-                i++;
-            }
-
-            Console.WriteLine("Czy chcesz zobaczyć listę procedur i dodatkowe informacje dla konkretnej maszyny? t/n");
-            string decision;
-            decision = Console.ReadLine();
-
-            if (decision=="t")
-            {
-                Console.WriteLine("Dla której? (Podaj numer)");
-                i = Convert.ToInt32(Console.ReadLine());
-                var plane = Airship_list.ElementAt(i-1);
-                Console.WriteLine("Model: " + plane.Name + "Typ statku powietrznego: " + plane.Type + "Wymagane uprawnienia: " + plane.Required_legitimation);
-                Console.WriteLine("Procedury: ");
-                foreach (var proc in plane.Procedure_list)
-                {
-                    Console.WriteLine(proc.Action + ": ");
-                    foreach (var act in proc.Activity_list)
-                    {
-                        i = 1;
-                        Console.WriteLine(i + ". " + act);
-                    }
-                }
-            }
-            return;
+            airship_list.Add(airship);
         }
-
-        public void add_to_list(Airship airship)
+    /// <summary>
+    /// funcja dodająca procedury do listy
+    /// </summary>
+    public void add_to_list(Procedure procedure)
         {
-            Airship_list.Add(airship);
+            procedure_blocks_list.Add(procedure);
         }
-
-        public void add_to_list(Procedure procedure)
+    /// <summary>
+    /// funcja dodająca czynnosci do listy
+    /// </summary>
+    public void add_to_list(Activity activity)
         {
-            Procedure_blocks_list.Add(procedure);
+            activity_blocks_list.Add((Activity)activity);
         }
-
-
-        public void remove_from_list(Pilot pilot)
+    /// <summary>
+    /// funkcja usuwająca z listy pilota
+    /// </summary>
+    public void remove_from_list(Pilot pilot)
         {
-            Users_list.Remove(pilot);
+            users_list.Remove(pilot);
         }
-
-        public void remove_from_list(Airship airship)
+    /// <summary>
+    /// funkcja usuwająca z listy statek powietrzny
+    /// </summary>
+    public void remove_from_list(Airship airship)
         {
-            Airship_list.Remove((Airship)airship);
+            airship_list.Remove((Airship)airship);
         }
-
-        public void remove_from_list(Procedure procedure)
+    /// <summary>
+    /// funkcja usuwająca z listy procedure
+    /// </summary>
+    public void remove_from_list(Procedure procedure)
         {
-            Procedure_blocks_list.Remove(procedure);
+            procedure_blocks_list.Remove(procedure);
         }
+    /// <summary>
+    /// funkcja usuwająca z listy czynnosc
+    /// </summary>
+    public void remove_from_list(Activity activity)
+        {
+            activity_blocks_list.Remove(activity);
 
-
-        public List<Pilot> search_user(string id, bool adv = false)
+        }
+    /// <summary>
+    /// funkcja wyszukująca pilota
+    /// </summary>
+    public List<Pilot> search_user(string id, bool adv = false)
         {
             var founded = new List<Pilot>();
             if (adv == true)
@@ -107,7 +98,7 @@ namespace back_end
             }
             else
             {
-                foreach (var person in Users_list)
+                foreach (var person in users_list)
                 {
                     if (person.User_id == id)
                     {
@@ -130,7 +121,7 @@ namespace back_end
         /// <returns></returns>
         public bool sign_up_check(string login)
         {
-            foreach (var user in Users_list)
+            foreach (var user in users_list)
             {
                 if (user.Login == login)
                 {
@@ -149,7 +140,7 @@ namespace back_end
         /// <returns></returns>
         public bool check_logging(string login, string password)
         {
-            foreach (var user in Users_list)
+            foreach (var user in users_list)
             {
                 if (user.Login == login)
                 {
