@@ -8,7 +8,7 @@ namespace front_end
 {
     class Database_assistant
     {
-        private back_end.Default_database database;
+        private back_end.Default_database database = new back_end.Default_database();
         public Database_assistant(back_end.Default_database database)
         {
             this.database = database;
@@ -18,8 +18,8 @@ namespace front_end
           var name =  Menu_assistant.ask_for("airship name");
           var type =  Menu_assistant.ask_for("airship type");
           var leg =  Menu_assistant.ask_for("requiered legitimation");
-          var airship =  new back_end.Airship(name, type, leg);
-          database.add_to_list(airship);
+          back_end.Airship air =  new back_end.Airship(name, type, leg);
+          database.add_to_list(air);
 
             Console.WriteLine("Do you want to add procedures? (y/n)");
             var procedures = Console.ReadLine();
