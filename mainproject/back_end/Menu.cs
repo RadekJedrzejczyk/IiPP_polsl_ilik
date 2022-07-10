@@ -16,7 +16,10 @@ namespace front_end
 
         public string Name { get => name; set => name = value; }
         public List<Option> Option_list { get => option_list; set => option_list = value; }
-
+        /// <summary>
+        /// Wyświetla informacje na temat użytkownika.
+        /// </summary>
+        /// <param name=name></param>
 
         public Menu (string name)
 
@@ -29,7 +32,9 @@ namespace front_end
             var new_option = new front_end.Option(text, function);
             this.Option_list.Add(new_option);
         }
-
+        /// <summary>
+        /// funckja wypisująca listye opcji
+        /// </summary>
         public void show()
         {
             while (true)
