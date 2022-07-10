@@ -9,7 +9,9 @@ namespace back_end
  /// Klasa opisująca statek powietrzny
  /// </summary>
     class Airship
-    {
+    {/// <summary>
+     ///deklarowanie zmiennych i list
+     /// </summary>
         private string name;
         private string type;
         private string required_legitimation;
