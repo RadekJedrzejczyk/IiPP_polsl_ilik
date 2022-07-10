@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 
 namespace mainproject
-{
+{<summary>
+ /// Klasa wywoływania danych funkcji
+ /// </summary>
     class Program
     {
         static void Main(string[] args)
