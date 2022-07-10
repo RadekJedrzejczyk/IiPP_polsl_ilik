@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace front_end
-{
+{/// <summary>
+ /// Klasa opisująca opjce, które można wykonać 
+ /// </summary>
     class Option
     {
         private string text;
