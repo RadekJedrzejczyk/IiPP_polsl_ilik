@@ -21,7 +21,9 @@ namespace back_end
         public int User_id_count { get => user_id_count; set => user_id_count = value; }
         public List<Airship> Airship_list { get => airship_list; set => airship_list = value; }
         public List<Procedure> Procedure_blocks_list { get => procedure_blocks_list; set => procedure_blocks_list = value; }
-
+        /// <summary>
+        /// testowa fukncja wypisująca
+        /// </summary>
 
         public void test()
         {
@@ -34,28 +36,39 @@ namespace back_end
             User_id_count++;
             Console.WriteLine("Dodano użytkownika do bazy danych");
         }
-
+        /// <summary>
+        /// fucncja dodająca statek powietrzny do listy 
+        /// </summary>
 
         public void add_to_list(Airship airship)
         {
             Airship_list.Add(airship);
         }
-
+        /// <summary>
+        /// funcja dodająca procedury do listy
+        /// </summary>
         public void add_to_list(Procedure procedure)
         {
             Procedure_blocks_list.Add(procedure);
         }
-
+        /// <summary>
+        /// funkcja usuwająca z listy pilota
+        /// </summary>
 
         public void remove_from_list(Pilot pilot)
         {
             Users_list.Remove(pilot);
         }
-
+        /// <summary>
+        /// funkcja usuwająca z listy statek powietrzny
+        /// </summary>
         public void remove_from_list(Airship airship)
         {
             Airship_list.Remove((Airship)airship);
         }
+        /// <summary>
+        /// funkcja usuwająca z listy procedure
+        /// </summary>
 
         public void remove_from_list(Procedure procedure)
         {
