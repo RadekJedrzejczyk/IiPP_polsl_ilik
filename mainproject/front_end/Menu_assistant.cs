@@ -14,5 +14,19 @@ namespace front_end
             text = Console.ReadLine();
             return text;
         }
+        static public void add_to_private(front_end.Database_assistant database_assistant, front_end.Login_assistant front_assistant)
+        {
+            var buf_database = database_assistant.Database;
+            database_assistant.Database = front_assistant.Logged_user.Private_database;
+            database_assistant.add_airship();
+            database_assistant.Database = buf_database;
+        }
+        static public void delete_from_private(front_end.Database_assistant database_assistant, front_end.Login_assistant front_assistant)
+        {
+            var buf_database = database_assistant.Database;
+            database_assistant.Database = front_assistant.Logged_user.Private_database;
+            database_assistant.delete();
+            database_assistant.Database = buf_database;
+        }
     }
 }

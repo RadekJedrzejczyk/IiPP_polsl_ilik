@@ -9,6 +9,9 @@ namespace front_end
     class Database_assistant
     {
         private back_end.Default_database database = new back_end.Default_database();
+
+        internal back_end.Default_database Database { get => database; set => database = value; }
+
         public Database_assistant(back_end.Default_database database)
         {
             this.database = database;
