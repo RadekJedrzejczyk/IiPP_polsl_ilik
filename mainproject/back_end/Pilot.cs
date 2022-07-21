@@ -19,7 +19,7 @@ namespace back_end
         private string password;
         private string user_id;
         private List<Airship> available_airship_list = new List<Airship>();
-        private Private_database private_database;
+        private Private_database private_database = new Private_database("0");
         /// <summary>
         /// funkcja dopisujaca zawy imienia i nazwiska numerlicencji rodzaj legitymacji numer urzytkownika i hasło
         /// </summary>
@@ -30,7 +30,7 @@ namespace back_end
             this.licention_number = licention_number;
             this.legitimation_type = legitimation_type;
             this.user_id = Convert.ToString(user_id_count);
-            Private_database private_database = new Private_database(user_id);
+            this.private_database.Id = user_id;
             this.login = login;
             this.password = password;
             
