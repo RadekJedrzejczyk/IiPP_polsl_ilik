@@ -20,6 +20,7 @@ namespace back_end
             string line;
             var reader= new StreamReader(from_where);
             line = reader.ReadLine();
+            //
             Console.WriteLine("Wczytuję " + line);
             var list = new List<string>();
             while (line != null)
@@ -98,6 +99,36 @@ namespace back_end
                 data_list.Add("-");
             }
             save(data_list, where);
+        }
+        public static void airship_data(Default_database main_database, string where)
+        {
+            string line;
+            var reader = new StreamReader(where);
+            line = reader.ReadLine();
+            while (line != null)
+            {
+                if (line == "-")
+                {
+                    var name = reader.ReadLine();
+                    var type = reader.ReadLine();
+                    var legitimation = reader.ReadLine();
+                    var airship = new Airship(name, type, legitimation);
+                    main_database.add_to_list(airship);
+                }
+                else
+                {
+                    if (line == ".")
+                    {
+                        line = reader.ReadLine();
+                    }
+                    else
+                    {
+
+                        main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.ElementAt(main_database.Procedure_blocks_list.Count - 1).Activity_list.Add(line);
+                        //string w liscie z procedurami
+                    }
+                }
+            }
         }
     }
 }
