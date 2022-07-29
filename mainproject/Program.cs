@@ -50,8 +50,8 @@ namespace mainproject
             logged_menu.add_option("Show public database", database_assistant.show); 
             logged_menu.add_option("Show your database", () => database_assistant.show_private(front_assistant.Logged_user.Private_database)); 
 
-            user_database_menu.add_option("Add_airship", () => front_end.Menu_assistant.add_to_private(database_assistant, front_assistant));
-           // user_database_menu.add_option("Remove_airship", () => front_end.Menu_assistant.delete_from_private(database_assistant, front_assistant);
+            user_database_menu.add_option("Add_airship", () => front_end.Menu_assistant.add_to_private(database_assistant, front_assistant)); 
+            user_database_menu.add_option("Remove_airship", () => front_end.Menu_assistant.delete_from_private(database_assistant, front_assistant)); 
 
             admin_menu.add_option("Manage main database", () => { Console.WriteLine("Nothing is here ;)"); Console.ReadKey(); });
 
