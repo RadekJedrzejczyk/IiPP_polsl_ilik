@@ -109,22 +109,27 @@ namespace back_end
             {
                 if (line == "-")
                 {
-                    var name = reader.ReadLine();
-                    var type = reader.ReadLine();
-                    var legitimation = reader.ReadLine();
-                    var airship = new Airship(name, type, legitimation);
-                    main_database.add_to_list(airship);
+                   var name = reader.ReadLine();
+                   var type = reader.ReadLine();
+                   var legitimation = reader.ReadLine();
+                   var airship = new Airship(name, type, legitimation);
+                   main_database.add_to_list(airship);
+                   line = reader.ReadLine();
                 }
                 else
                 {
+                   
                     if (line == ".")
                     {
+                      
                         line = reader.ReadLine();
                     }
                     else
                     {
 
-                        main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.ElementAt(main_database.Procedure_blocks_list.Count - 1).Activity_list.Add(line);
+                        main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.ElementAt(main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.Count - 1).Activity_list.Add(line);
+                       //main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.ElementAt(main_database.Procedure_blocks_list.Count - 1).Activity_list.Add(line);
+                        line = reader.ReadLine();
                         //string w liscie z procedurami
                     }
                 }

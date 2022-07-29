@@ -20,7 +20,8 @@ namespace mainproject
             var database_assistant = new front_end.Database_assistant(main_database); 
 
 
-            main_database.Procedure_blocks_list = back_end.File_assistant.load_procedures("procedury.txt"); 
+            main_database.Procedure_blocks_list = back_end.File_assistant.load_procedures("procedury.txt");
+            back_end.File_assistant.airship_data(main_database, "cos.txt");
 
             ///deklaruje różne menu
             var main_menu = new front_end.Menu("Main Menu");
