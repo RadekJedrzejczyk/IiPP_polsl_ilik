@@ -15,17 +15,18 @@ namespace back_end
         /// </summary>
         /// <param name="from_where"> Ścieżka do pliku z z którego chcesz zwracać listę.</param>
         /// <returns>Zwraca listę stringów, gdzie każdy element to jedna linia z pliku. Pierwsza to nagłówek</returns>
-        public static List<string> load (string from_where)
-            {
+        public static List<string> load(string from_where)
+        {
             string line;
-            var reader= new StreamReader(from_where);
+            var reader = new StreamReader(from_where);
             line = reader.ReadLine();
+            //
             Console.WriteLine("Wczytuję " + line);
             var list = new List<string>();
             while (line != null)
             {
                 list.Add(line);
-                line = reader.ReadLine();   
+                line = reader.ReadLine();
             }
             reader.Close();
             return list;
@@ -53,7 +54,7 @@ namespace back_end
                     }
                     else
                     {
-                        procedure_list.ElementAt(procedure_list.Count-1).Activity_list.Add(text);
+                        procedure_list.ElementAt(procedure_list.Count - 1).Activity_list.Add(text);
                     }
 
                 }
@@ -66,13 +67,14 @@ namespace back_end
         /// </summary>
         /// <param name="list">Lista stringów, którą chcemy zapisać do pliku. Każdy element to jedna linia</param>
         /// <param name="where">Ścieżka do pliku w którym wszystko zostanie zapisane.</param>
-        public static void save(List<string>list, string where)
+        public static void save(List<string> list, string where)
         {
             var writer = new StreamWriter(where);
             foreach (var line in list)
             {
                 writer.WriteLine(line);
             }
+            writer.Close();
         }
 
         public static void save_airship_database(back_end.Default_database database, string where)
@@ -90,7 +92,7 @@ namespace back_end
                 {
                     data_list.Add(".");
                     data_list.Add(proc.Action);
-                    foreach(var act in proc.Activity_list)
+                    foreach (var act in proc.Activity_list)
                     {
                         data_list.Add(act);
                     }
@@ -98,6 +100,43 @@ namespace back_end
                 data_list.Add("-");
             }
             save(data_list, where);
+        }
+        public static void airship_data(Default_database main_database, string where)
+        {
+            string line;
+            var reader = new StreamReader(where);
+            line = reader.ReadLine();
+            while (line != null)
+            {
+                if (line == "-")
+                {
+                    var name = reader.ReadLine();
+                    var type = reader.ReadLine();
+                    var legitimation = reader.ReadLine();
+                    var airship = new Airship(name, type, legitimation);
+                    main_database.add_to_list(airship);
+                    
+                }
+                else
+                {
+
+                    if (line == ".")
+                    {
+                        line = reader.ReadLine();
+                        var procedure = new Procedure(line);
+                        main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.Add(procedure);
+                        
+                    }
+                    else
+                    {
+
+                        main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.ElementAt(main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.Count - 1).Activity_list.Add(line);
+                        
+
+                    }
+                }
+                line = reader.ReadLine();
+            }
         }
     }
 }
