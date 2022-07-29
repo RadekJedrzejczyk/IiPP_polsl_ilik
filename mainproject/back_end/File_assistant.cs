@@ -121,16 +121,16 @@ namespace back_end
                    
                     if (line == ".")
                     {
-                      
                         line = reader.ReadLine();
+                        var procedure = new Procedure(line);
+                        main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.Add(procedure);
                     }
                     else
                     {
 
                         main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.ElementAt(main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.Count - 1).Activity_list.Add(line);
-                       //main_database.Airship_list.ElementAt(main_database.Airship_list.Count - 1).Procedure_list.ElementAt(main_database.Procedure_blocks_list.Count - 1).Activity_list.Add(line);
                         line = reader.ReadLine();
-                        //string w liscie z procedurami
+
                     }
                 }
             }
