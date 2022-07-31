@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace back_end
 {        /// <summary>
-         /// Klasa z listą zawierającą różnego rodzaju procedury. 
+         /// Klasa opisująca procedurę.
          /// </summary>
     class Procedure
     {
@@ -15,45 +15,29 @@ namespace back_end
         private List<string> activity_list = new List<string>();
 
         public string Action { get => action; set => action = value; }
-        public List<string> Activity_list { get => activity_list; set => activity_list = value; }
-
-        public Procedure (string action)
+        public List<string> Activity_list { get => activity_list; set => activity_list = value; } //lista czynności wewnątrz procedury
+        /// <summary>
+        /// Konstruktor procedury.
+        /// </summary>
+        /// <param name="action">Nazwa procedury</param>
+        public Procedure(string action)
         {
             this.action = action;
 
         }
 
         /// <summary>
-        /// Funkcja wyświetla listę kolejnych czynności, które trzeba wykonać
+        /// Funkcja wyświetla listę kolejnych czynności, które zawiera procedura
         /// </summary>
-        public void show()
-        { int i = 1;
+        public void Show()
+        {
+            int i = 1;
             Console.WriteLine(this.Action);
             foreach (var act in Activity_list)
-                    {
+            {
                 Console.WriteLine(i + ". " + act);
                 i++;
             }
         }
-        /// <summary>
-        /// Funkcja pozwalająca na wczytanie listy czynności z pliku.
-        /// </summary>
-        public void read ()
-            {}
-        /// <summary>
-        /// Funkcja pozwalająca na zapis listy czynności do pliku.
-        /// </summary>
-        public void save()
-        { }
-        /// <summary>
-        /// Funkcja pozwalająca na dodanie elementu do listy czynności.
-        /// </summary>
-        public void add()
-        { }
-        /// <summary>
-        /// Funkcja pozwalająca na usunięcie elementu z listy czynności.
-        /// </summary>
-        public void delete()
-        { }
     }
 }

@@ -11,7 +11,10 @@ namespace back_end
     class Private_database :Default_database
     {
         private string id;
-        
+        /// <summary>
+        /// Konstruktor bazy.
+        /// </summary>
+        /// <param name="id">Id użytkownika do którego należy baza danych</param>
         public Private_database (string id)
         {
             this.id = id;

@@ -8,15 +8,17 @@ namespace back_end
 {/// <summary>
  /// Klasa opisująca statek powietrzny
  /// </summary>
+
     class Airship
-    {/// <summary>
-     ///deklarowanie zmiennych i list
-     /// </summary>
+    {
+
         private string name;
         private string type;
         private string required_legitimation;
         private List<Procedure>procedure_list=new List<Procedure>();
-
+        /// <param name="name"> Nazwa statku powietrznego</param>
+        /// <param name="type">Typ statku powietrznego np. "ultralekki" </param>
+        /// <param name="required_legitimation">Wymagane uprawnienia do kierowania statkie powietrznym np. "PPL"</param>
         public Airship(string name, string type, string required_legitimation)
         {
             this.name = name;

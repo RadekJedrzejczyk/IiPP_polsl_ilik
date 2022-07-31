@@ -5,24 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace front_end
-{
+{/// <summary>
+/// Klasa łącząca back_end baz danych z front_endem widocznym przez użytkownika.
+/// </summary>
     class Database_assistant
     {
         private back_end.Default_database database = new back_end.Default_database();
 
         internal back_end.Default_database Database { get => database; set => database = value; }
-
+        /// <summary>
+        /// Konstruktor.
+        /// </summary>
+        /// <param name="database">Baza danych na której operują funkcje klasy.</param>
         public Database_assistant(back_end.Default_database database)
         {
             this.database = database;
         }
-        public void add_airship()
+        /// <summary>
+        /// Umożliwia użytkownikowi dodanie maszyny do bazy danych. 
+        /// </summary>
+        public void Add_airship()
         {
-            var name = Menu_assistant.ask_for("airship name");
-            var type = Menu_assistant.ask_for("airship type");
-            var leg = Menu_assistant.ask_for("requiered legitimation");
+            var name = Menu_assistant.Ask_for("airship name");
+            var type = Menu_assistant.Ask_for("airship type");
+            var leg = Menu_assistant.Ask_for("requiered legitimation");
             back_end.Airship air = new back_end.Airship(name, type, leg);
-            database.add_to_list(air);
+            database.Add_to_list(air);
 
             Console.WriteLine("Do you want to add procedures? (y/n)");
             var procedures = Console.ReadLine();
@@ -33,27 +41,33 @@ namespace front_end
             }
             return;
         }
-
-        public void delete()
+        /// <summary>
+        /// Umożliwia użytkownikowi usunięcie maszyny z bazy danych.
+        /// </summary>
+        public void Delete()
         {
             int Nr = 1;
             foreach (var airship in database.Airship_list)
             {
                 Console.WriteLine(Nr + airship.Name);
             }
-            var num = Menu_assistant.ask_for("which one (number on the list)");
+            var num = Menu_assistant.Ask_for("which one (number on the list)");
 
-            database.remove_from_list(database.Airship_list.ElementAt(Convert.ToInt32(num) - 1));
+            database.Remove_from_list(database.Airship_list.ElementAt(Convert.ToInt32(num) - 1));
             Console.WriteLine("Complete");
             Console.ReadKey();
         }
+        /// <summary>
+        /// Umożliwia użytkownikowi ściągniecie baz danych, w tym maszyn.
+        /// </summary>
+        /// <param name="logged_user">Zalogowny użytkownik, który pobiera dane</param>
+        /// <param name="private_database">Określa czy zapisać prywatną bazę danych</param>
 
-
-        public void download(back_end.Pilot logged_user, bool private_database = false)
+        public void Download(back_end.Pilot logged_user, bool private_database = false)
         {
             Console.WriteLine("Where to save the file with public database?");
             var save_location = Console.ReadLine();
-            back_end.File_assistant.save_airship_database(database, save_location);
+            back_end.File_assistant.Save_airship_database(database, save_location);
 
             if (private_database == true)
             {
@@ -70,11 +84,11 @@ namespace front_end
                     "Password: **********"
                 };
 
-                back_end.File_assistant.save(data_list, save_location);
+                back_end.File_assistant.Save(data_list, save_location);
 
                 Console.WriteLine("Where to save the file with your private database?");
                 save_location = Console.ReadLine();
-                back_end.File_assistant.save_airship_database(logged_user.Private_database, save_location);
+                back_end.File_assistant.Save_airship_database(logged_user.Private_database, save_location);
 
 
             }
@@ -83,16 +97,22 @@ namespace front_end
         }
 
 
-
-        public void show_private(back_end.Default_database database_priv)
+        /// <summary>
+        /// Wyświetla prywatną bazę danych.
+        /// </summary>
+        /// <param name="database_priv">Prywatna baza dancyh do wyświetlenia.</param>
+        public void Show_private(back_end.Default_database database_priv)
         {
             var buf = database;
             database = database_priv;
-            show();
+            Show();
             database = buf;
 
         }
-        public void show()
+        /// <summary>
+        /// Umożliwia użytkownikowi wyświetlenie listy maszyn oraz opcjonalnie przypisanych im procedur. 
+        /// </summary>
+        public void Show()
         {
             int i = 1;
             Console.WriteLine("Oto lista maszyn:");

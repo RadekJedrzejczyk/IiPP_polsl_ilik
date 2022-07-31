@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace front_end
 {/// <summary>
- /// Klasa opisująca opjce, które można wykonać 
+ /// Klasa opisująca opcje, dodawane do Menu
  /// </summary>
     class Option
     {
@@ -15,12 +15,17 @@ namespace front_end
         public string Text { get => text; set => text = value; }
         public Action Function { get => function; set => function = value; }
 
-        void universal_function() { }
-        public Option(string text, Action input_function, bool admin = false)
+        /// <summary>
+        /// Konstruktor opcji.
+        /// </summary>
+        /// <param name="text">Treść opisująca opcję, wyświetlana w menu</param>
+        /// <param name="input_function">Funkcja uruchamiana przez opcję.</param>
+ 
+        public Option(string text, Action input_function)
         {
             this.text = text;
             this.function = input_function; 
-            //this.function = universal_function;
+
 
         }
 

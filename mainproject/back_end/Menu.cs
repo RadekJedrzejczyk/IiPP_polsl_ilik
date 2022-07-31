@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace front_end
 {
     /// <summary>
-    /// Tutaj program pokazuje glowne menu i daje mozliwosc wyboru co sie chce zrobic
+    ///Klasa odpowiedzialna za tworzenie i wyświetlanie podstawowego menu.
     /// </summary>
     class Menu
     {
@@ -16,26 +16,31 @@ namespace front_end
 
         public string Name { get => name; set => name = value; }
         public List<Option> Option_list { get => option_list; set => option_list = value; }
-        /// <summary>
-        /// Wyświetla informacje na temat użytkownika.
-        /// </summary>
-        /// <param name=name></param>
 
+
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="name">Nazwa menu</param>
         public Menu (string name)
 
         {
             this.name = name;
         }
-
-        public void add_option(string text, Action function)
+        /// <summary>
+        /// Funkcja dodaje opcje do menu
+        /// </summary>
+        /// <param name="text">Wyswietlana nazwa</param>
+        /// <param name="function">Funkcja którą uruchamia opcja</param>
+        public void Add_option(string text, Action function)
         {
             var new_option = new front_end.Option(text, function);
             this.Option_list.Add(new_option);
         }
         /// <summary>
-        /// funckja wypisująca listye opcji
+        /// Funkcja wyświetla liste opcji.
         /// </summary>
-        public void show()
+        public void Show()
         {
             while (true)
             {

@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>mainproject</name>
+    </assembly>
+    <members>
+        <member name="T:front_end.Database_assistant">
+            <summary>
+            Klasa łącząca back_end baz danych z front_endem widocznym przez użytkownika.
+            </summary>
+        </member>
+        <member name="M:front_end.Database_assistant.#ctor(back_end.Default_database)">
+            <summary>
+            Konstruktor.
+            </summary>
+            <param name="database">Baza danych na której operują funkcje klasy.</param>
+        </member>
+        <member name="M:front_end.Database_assistant.Add_airship">
+            <summary>
+            Umożliwia użytkownikowi dodanie maszyny do bazy danych. 
+            </summary>
+        </member>
+        <member name="M:front_end.Database_assistant.Delete">
+            <summary>
+            Umożliwia użytkownikowi usunięcie maszyny z bazy danych.
+            </summary>
+        </member>
+        <member name="M:front_end.Database_assistant.Download(back_end.Pilot,System.Boolean)">
+            <summary>
+            Umożliwia użytkownikowi ściągniecie baz danych, w tym maszyn.
+            </summary>
+            <param name="logged_user">Zalogowny użytkownik, który pobiera dane</param>
+            <param name="private_database">Określa czy zapisać prywatną bazę danych</param>
+        </member>
+        <member name="M:front_end.Database_assistant.Show_private(back_end.Default_database)">
+            <summary>
+            Wyświetla prywatną bazę danych.
+            </summary>
+            <param name="database_priv">Prywatna baza dancyh do wyświetlenia.</param>
+        </member>
+        <member name="M:front_end.Database_assistant.Show">
+            <summary>
+            Umożliwia użytkownikowi wyświetlenie listy maszyn oraz opcjonalnie przypisanych im procedur. 
+            </summary>
+        </member>
+        <member name="T:front_end.Login_assistant">
+            <summary>
+            Klasa umożliwiające komunikację użytkownika z jego informacjami na back endzie.
+            </summary>
+        </member>
+        <member name="M:front_end.Login_assistant.#ctor(back_end.Default_database)">
+            <summary>
+            Konstruktor.
+            </summary>
+            <param name="database">Baza danych z której pochodzą informacje</param>
+        </member>
+        <member name="M:front_end.Login_assistant.Login(System.Action)">
+            <summary>
+            Funkcaj pozwalająca zalogować się użytkownikowi.
+            </summary>
+            <param name="if_true">Funkcja która wykona się, jeżeli logowanie się powiedzie.</param>
+        </member>
+        <member name="M:front_end.Login_assistant.Sign_up">
+            <summary>
+            Funkcja umożliwiająca zarejestrowanie się użytkownikowi.
+            </summary>
+        </member>
+        <member name="M:front_end.Login_assistant.Show_data">
+            <summary>
+            Funkcja wyświetla wszystkie dane użytkownika.
+            </summary>
+        </member>
+        <member name="M:front_end.Login_assistant.Edit_data">
+            <summary>
+            Funkcja umożliwia użytkowikowi edycję jego danych.
+            </summary>
+        </member>
+        <member name="T:front_end.Menu">
+             <summary>
+            Klasa odpowiedzialna za tworzenie i wyświetlanie podstawowego menu.
+             </summary>
+        </member>
+        <member name="M:front_end.Menu.#ctor(System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="name">Nazwa menu</param>
+        </member>
+        <member name="M:front_end.Menu.Add_option(System.String,System.Action)">
+            <summary>
+            Funkcja dodaje opcje do menu
+            </summary>
+            <param name="text">Wyswietlana nazwa</param>
+            <param name="function">Funkcja którą uruchamia opcja</param>
+        </member>
+        <member name="M:front_end.Menu.Show">
+            <summary>
+            Funkcja wyświetla liste opcji.
+            </summary>
+        </member>
+        <member name="T:front_end.Menu_assistant">
+            <summary>
+            Klasa wspomagająca funkcje menu.
+            </summary>
+        </member>
+        <member name="M:front_end.Menu_assistant.Ask_for(System.String)">
+            <summary>
+            Funkcja prosząca użytkownika o podanie jakiejś danej
+            </summary>
+            <param name="text">Treść o podanie której prosi funkcja </param>
+            <returns>Zwraca to co podał użytkownik</returns>
+        </member>
+        <member name="M:front_end.Menu_assistant.Add_to_private(front_end.Database_assistant,front_end.Login_assistant)">
+            <summary>
+            Funkcja umożliwia dodanie maszyny do prywatnej bazy danych z użyciem istniejącego assystenta bazy danych.
+            </summary>
+            <param name="database_assistant">Używany asystent</param>
+            <param name="front_assistant">Login_assistant w którym zalogowany jest użytkownik</param>
+        </member>
+        <member name="M:front_end.Menu_assistant.Delete_from_private(front_end.Database_assistant,front_end.Login_assistant)">
+            <summary>
+            Funkcja umożliwia usunięcie maszyny z prywatnej bazy danych z użyciem istniejącego assystenta bazy danych.
+            </summary>
+            <param name="database_assistant">Używany asystent</param>
+            <param name="front_assistant">Login_assistant w którym zalogowany jest użytkownik</param>
+        </member>
+        <member name="T:front_end.Option">
+            <summary>
+            Klasa opisująca opcje, dodawane do Menu
+            </summary>
+        </member>
+        <member name="M:front_end.Option.#ctor(System.String,System.Action)">
+            <summary>
+            Konstruktor opcji.
+            </summary>
+            <param name="text">Treść opisująca opcję, wyświetlana w menu</param>
+            <param name="input_function">Funkcja uruchamiana przez opcję.</param>
+        </member>
+        <member name="T:back_end.Default_database">
+            <summary>
+            Domyślny typ bazy danych zaiwerająca losty pilotów, statków powietrznych, procedur i możliwych czynności, a także podstawowe funkcjonalności.
+            </summary>
+        </member>
+        <member name="M:back_end.Default_database.Add_to_list(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Funkcja dodająca użytkownika do bazy danych.
+            </summary>
+            <param name="name">Imię użytkownika</param>
+            <param name="surname">Nazwisko użytkownika</param>
+            <param name="licention_number">Numer licencji pilota</param>
+            <param name="legitimation_type">Uprawnienia pilota</param>
+            <param name="login">Login użytkownika</param>
+            <param name="password">Hasło użytkownika</param>
+        </member>
+        <member name="M:back_end.Default_database.Add_to_list(back_end.Airship)">
+            <summary>
+            fucncja dodająca statek powietrzny do listy 
+            </summary>
+            <param name="airship">Maszyna która zostanie dodana do bazy danych</param>
+        </member>
+        <member name="M:back_end.Default_database.Add_to_list(back_end.Procedure)">
+            <summary>
+            funcja dodająca procedury do listy
+            </summary>
+            <param name="procedure">Procedura, która zostanie dodany do bazy danych</param>
+        </member>
+        <member name="M:back_end.Default_database.Remove_from_list(back_end.Pilot)">
+            <summary>
+            funkcja usuwająca z listy pilota
+            </summary>
+            <param name="pilot">Użytkownik który zostanie usunięty z bazy danych</param>
+        </member>
+        <member name="M:back_end.Default_database.Remove_from_list(back_end.Airship)">
+            <summary>
+            funkcja usuwająca z listy statek powietrzny
+            </summary>
+            <param name="airship">Maszyna która zostanie dodana do bazy danych</param> 
+        </member>
+        <member name="M:back_end.Default_database.Remove_from_list(back_end.Procedure)">
+            <summary>
+            funkcja usuwająca z listy procedure
+            </summary>
+            <param name="procedure">Procedura, która zostanie usunięta z bazy danych</param>
+        </member>
+        <member name="M:back_end.Default_database.Sign_up_check(System.String)">
+            <summary>
+            Sprawdza czy dany login jest zajęty.
+            </summary>
+            <param name="login">Sprawdzany login</param>
+            <returns>Zwraca false jeśli login jest zajęty i true jeśli jest wolny</returns>
+        </member>
+        <member name="M:back_end.Default_database.Check_logging(System.String,System.String)">
+            <summary>
+            Sprawda czy logowanie się powiodło
+            </summary>
+            <param name="login">Login podany przez użytkownika</param>
+            <param name="password">Hasło podane przez użytkownika</param>
+            <returns>Zwraca true jeśli dane są zgodne z bazą danych i false jeśli nie</returns>
+        </member>
+        <member name="T:back_end.File_assistant">
+            <summary>
+            Klasa obsługująca pliki w tym odczyt i zapis
+            </summary>
+        </member>
+        <member name="M:back_end.File_assistant.Load(System.String)">
+            <summary>
+            Funkcja przekształca zapis z pliku .txt na listę
+            </summary>
+            <param name="from_where"> Ścieżka do pliku z z którego chcesz utworzyć listę.</param>
+            <returns>Zwraca listę stringów, gdzie każdy element to jedna linia z pliku. Pierwsza to nagłówek</returns>
+        </member>
+        <member name="M:back_end.File_assistant.Load_procedures(System.String)">
+            <summary>
+            Ładuje listę procedur oraz przypisanych im akcji
+            </summary>
+            <param name="from_where"> Ścieżka do pliku z z którego chcesz wgrać listę.</param>
+            <returns>Zwraca listę z procedurami</returns>
+        </member>
+        <member name="M:back_end.File_assistant.Save(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Funkcja zapisująca do pliku.
+            </summary>
+            <param name="list">Lista stringów, którą chcemy zapisać do pliku. Każdy element to jedna linia.</param>
+            <param name="where">Ścieżka do pliku w którym wszystko zostanie zapisane.</param>
+        </member>
+        <member name="M:back_end.File_assistant.Save_airship_database(back_end.Default_database,System.String)">
+            <summary>
+            Funkcja zapisuje maszyny z bazy danych do pliku.
+            </summary>
+            <param name="database">Baza danych z której pochodzą maszyny.</param>
+            <param name="where">Ścieżka do pliku w którym zapisane zostają pliki.</param>
+        </member>
+        <member name="M:back_end.File_assistant.Airship_data(back_end.Default_database,System.String)">
+            <summary>
+            Funkcja wczytuje maszyny z procedurami do bazy danych.
+            </summary>
+            <param name="main_database">Baza danych do której zostaną wgrane maszyny.</param>
+            <param name="where">Ścieżka do pliku z którego są wczytywane maszyny.</param>
+        </member>
+        <member name="T:back_end.Pilot">
+            <summary>
+            Podstawowa klasa opisująca użytkownika i jego uprawnienia.
+            </summary>
+        </member>
+        <member name="M:back_end.Pilot.#ctor(System.String,System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Konstruktor Pilota.
+            </summary>
+            <param name="name">Imię użytkownika</param>
+            <param name="surname">Nazwisko użytkownika</param>
+            <param name="licention_number">Numer licencji pilota</param>
+            <param name="legitimation_type">Uprawnienia pilota</param>
+            <param name="user_id_count">Id przypisane do użytkownika</param>
+            <param name="login">Login użytkownika</param>
+            <param name="password">Hasło użytkownika</param>
+        </member>
+        <member name="M:back_end.Pilot.Who_are_you(System.Boolean)">
+            <summary>
+            Wyświetla informacje na temat użytkownika.
+            </summary>
+            <param name="admin"> Jeżeli 'true' wyswietla również dane poufne</param>
+        </member>
+        <member name="T:back_end.Private_database">
+            <summary>
+            Prywatna baza danych, dostępna dla danego użytkownika. 
+            </summary>
+        </member>
+        <member name="M:back_end.Private_database.#ctor(System.String)">
+            <summary>
+            Konstruktor bazy.
+            </summary>
+            <param name="id">Id użytkownika do którego należy baza danych</param>
+        </member>
+        <member name="T:back_end.Procedure">
+            <summary>
+            Klasa opisująca procedurę.
+            </summary>
+        </member>
+        <member name="M:back_end.Procedure.#ctor(System.String)">
+            <summary>
+            Konstruktor procedury.
+            </summary>
+            <param name="action">Nazwa procedury</param>
+        </member>
+        <member name="M:back_end.Procedure.Show">
+            <summary>
+            Funkcja wyświetla listę kolejnych czynności, które zawiera procedura
+            </summary>
+        </member>
+        <member name="T:back_end.Airship">
+            <summary>
+            Klasa opisująca statek powietrzny
+            </summary>
+        </member>
+        <member name="M:back_end.Airship.#ctor(System.String,System.String,System.String)">
+            <param name="name"> Nazwa statku powietrznego</param>
+            <param name="type">Typ statku powietrznego np. "ultralekki" </param>
+            <param name="required_legitimation">Wymagane uprawnienia do kierowania statkie powietrznym np. "PPL"</param>
+        </member>
+        <member name="T:mainproject.Program">
+            <summary>
+             Główny program
+             </summary>
+        </member>
+    </members>
+</doc>

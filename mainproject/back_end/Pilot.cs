@@ -17,12 +17,18 @@ namespace back_end
         private string legitimation_type;
         private string login;
         private string password;
-        private string user_id;
-        private List<Airship> available_airship_list = new List<Airship>();
+        private readonly string user_id;
         private Private_database private_database = new Private_database("0");
         /// <summary>
-        /// funkcja dopisujaca zawy imienia i nazwiska numerlicencji rodzaj legitymacji numer urzytkownika i hasło
+        /// Konstruktor Pilota.
         /// </summary>
+        /// <param name="name">Imię użytkownika</param>
+        /// <param name="surname">Nazwisko użytkownika</param>
+        /// <param name="licention_number">Numer licencji pilota</param>
+        /// <param name="legitimation_type">Uprawnienia pilota</param>
+        /// <param name="user_id_count">Id przypisane do użytkownika</param>
+        /// <param name="login">Login użytkownika</param>
+        /// <param name="password">Hasło użytkownika</param>
         public Pilot(string name, string surname, string licention_number, string legitimation_type, int user_id_count, string login, string password)
         {
             this.name = name;
@@ -40,7 +46,7 @@ namespace back_end
         /// Wyświetla informacje na temat użytkownika.
         /// </summary>
         /// <param name="admin"> Jeżeli 'true' wyswietla również dane poufne</param>
-        public void who_are_you(bool admin = false)
+        public void Who_are_you(bool admin = false)
         {
             Console.WriteLine(Name + Surname + ", licention number: " + Licention_number + ". Legitimation type: " + Legitimation_type + ".");
             if (admin == true) Console.WriteLine ("User_id: " + User_id+ ". Login: "+ Login+". Password: "+ Password+ ".");
