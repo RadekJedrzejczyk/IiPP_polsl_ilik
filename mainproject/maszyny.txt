@@ -1,0 +1,44 @@
+-
+cesna
+płatowiec
+ppl
+.
+procedura startu
+pozwolenie na start z wieży kontrolnej
+zapięcie pasów oraz przełączenie telefonów komórkowych w tryb samolotowy
+uruchomienie silników
+sprawdzenie check-listy
+kołowanie
+rozpędzenie do odpowiedniej prędkości startowej
+.
+procedura wznoszenia
+schowanie podwozia
+schowanie klap
+zmniejszenie mocy silników
+skonfigurowanie samolotu do dalszego lotu
+.
+procedura lądowania
+ustawienie klap lądowania
+wysunięcie podwozia
+włączenie świateł podwozia
+sprawdzenie check-listy
+podprowadzenie
+wyrównanie
+wytrzymanie
+przyziemienie
+dobieg
+kołowanie
+.
+procedura lądowania awaryjnego
+wydanie polecenia zapięcia pasów
+zdajecie ze stop botów
+zdajecie okularów
+wyjecie z kieszeni wszelkich twardych przedmiotów
+-
+kamień
+przedmiot
+brak
+.
+start
+podnieś kamień
+rzuć kamień
