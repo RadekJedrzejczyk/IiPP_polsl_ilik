@@ -8,19 +8,20 @@ using System.Threading.Tasks;
 
 namespace mainproject
 {
- ///<summary>
- /// Klasa wywoływania danych funkcji
- /// </summary>
+    ///<summary>
+    /// Klasa wywoływania danych funkcji
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
-        {   
+        {
             var main_database = new back_end.Default_database();
             var front_assistant = new front_end.Login_assistant(main_database); //obiekt zajmujący się front_endem zalogowanego użytkownika
-            var database_assistant = new front_end.Database_assistant(main_database); 
+            var database_assistant = new front_end.Database_assistant(main_database);
 
 
-            main_database.Procedure_blocks_list = back_end.File_assistant.load_procedures("procedury.txt"); 
+            main_database.Procedure_blocks_list = back_end.File_assistant.load_procedures("procedury.txt");
+            back_end.File_assistant.airship_data(main_database, "cos.txt");
 
             ///deklaruje różne menu
             var main_menu = new front_end.Menu("Main Menu");
@@ -46,16 +47,16 @@ namespace mainproject
             logged_menu.add_option("Edit your data", front_assistant.edit_data);
             logged_menu.add_option("Download data", () => database_assistant.download(front_assistant.Logged_user, true));
             logged_menu.add_option("Manage your database", user_database_menu.show);
-            logged_menu.add_option("Show public database", database_assistant.show); 
-            logged_menu.add_option("Show your database", () => database_assistant.show_private(front_assistant.Logged_user.Private_database)); 
+            logged_menu.add_option("Show public database", database_assistant.show);
+            logged_menu.add_option("Show your database", () => database_assistant.show_private(front_assistant.Logged_user.Private_database));
 
-            user_database_menu.add_option("Add_airship", () => front_end.Menu_assistant.add_to_private(database_assistant, front_assistant)); 
-            user_database_menu.add_option("Remove_airship", () => front_end.Menu_assistant.delete_from_private(database_assistant, front_assistant); 
+            user_database_menu.add_option("Add_airship", () => front_end.Menu_assistant.add_to_private(database_assistant, front_assistant));
+            user_database_menu.add_option("Remove_airship", () => front_end.Menu_assistant.delete_from_private(database_assistant, front_assistant));
 
             admin_menu.add_option("Manage main database", () => { Console.WriteLine("Nothing is here ;)"); Console.ReadKey(); });
 
 
-      
+
             ///uruchomienie
             main_menu.show();
             Console.Clear();

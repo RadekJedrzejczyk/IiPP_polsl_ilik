@@ -18,11 +18,11 @@ namespace front_end
         }
         public void add_airship()
         {
-          var name =  Menu_assistant.ask_for("airship name");
-          var type =  Menu_assistant.ask_for("airship type");
-          var leg =  Menu_assistant.ask_for("requiered legitimation");
-          back_end.Airship air =  new back_end.Airship(name, type, leg);
-          database.add_to_list(air);
+            var name = Menu_assistant.ask_for("airship name");
+            var type = Menu_assistant.ask_for("airship type");
+            var leg = Menu_assistant.ask_for("requiered legitimation");
+            back_end.Airship air = new back_end.Airship(name, type, leg);
+            database.add_to_list(air);
 
             Console.WriteLine("Do you want to add procedures? (y/n)");
             var procedures = Console.ReadLine();
@@ -34,7 +34,8 @@ namespace front_end
             return;
         }
 
-        public void delete() {
+        public void delete()
+        {
             int Nr = 1;
             foreach (var airship in database.Airship_list)
             {
@@ -54,8 +55,9 @@ namespace front_end
             var save_location = Console.ReadLine();
             back_end.File_assistant.save_airship_database(database, save_location);
 
-            if (private_database == true) { 
-              Console.WriteLine("Where to save the file with your data?");
+            if (private_database == true)
+            {
+                Console.WriteLine("Where to save the file with your data?");
                 save_location = Console.ReadLine();
                 var data_list = new List<string>
                 {
@@ -74,15 +76,15 @@ namespace front_end
                 save_location = Console.ReadLine();
                 back_end.File_assistant.save_airship_database(logged_user.Private_database, save_location);
 
-                
-             }
 
-        return;
+            }
+
+            return;
         }
 
-      
 
-        public void show_private (back_end.Default_database database_priv)
+
+        public void show_private(back_end.Default_database database_priv)
         {
             var buf = database;
             database = database_priv;
@@ -109,17 +111,25 @@ namespace front_end
                 Console.WriteLine("Dla której? (Podaj numer)");
                 i = Convert.ToInt32(Console.ReadLine());
                 var plane = database.Airship_list.ElementAt(i - 1);
-                Console.WriteLine("Model: " + plane.Name + "Typ statku powietrznego: " + plane.Type + "Wymagane uprawnienia: " + plane.Required_legitimation);
+                Console.WriteLine("-------------------------------------------------");
+                Console.WriteLine("Model: " + plane.Name);
+                Console.WriteLine("Typ statku powietrznego: " + plane.Type);
+                Console.WriteLine("Wymagane uprawnienia: " + plane.Required_legitimation);
+                Console.WriteLine("-------------------------------------------------");
                 Console.WriteLine("Procedury: ");
                 foreach (var proc in plane.Procedure_list)
                 {
+                    Console.WriteLine("");
                     Console.WriteLine(proc.Action + ": ");
+                    Console.WriteLine("");
+                    i = 1;
                     foreach (var act in proc.Activity_list)
                     {
-                        i = 1;
                         Console.WriteLine(i + ". " + act);
+                        i++;
                     }
                 }
+                Console.ReadKey();
             }
             return;
         }
